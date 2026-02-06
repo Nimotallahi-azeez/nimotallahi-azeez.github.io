@@ -1,0 +1,816 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nimotallahi Azeez | Technical Communication Specialist</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;600;700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #1a1a2e;
+            --secondary: #16213e;
+            --accent: #e94560;
+            --light: #f8f9fa;
+            --text-dark: #2d3748;
+            --text-light: #718096;
+            --border: #e2e8f0;
+            --gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            color: var(--text-dark);
+            line-height: 1.7;
+            background: var(--light);
+            overflow-x: hidden;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            position: relative;
+            overflow: hidden;
+            padding: 2rem;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            width: 200%;
+            height: 200%;
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(233, 69, 96, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 50%, rgba(102, 126, 234, 0.1) 0%, transparent 50%);
+            animation: float 20s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0) rotate(0deg); }
+            50% { transform: translate(-50px, -50px) rotate(5deg); }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            max-width: 900px;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .profile-image-placeholder {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            background: var(--gradient);
+            margin: 0 auto 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            color: white;
+            font-weight: 700;
+            border: 5px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            animation: fadeIn 1s ease-out 0.3s backwards;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: scale(0.8); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        .hero h1 {
+            font-family: 'Crimson Pro', serif;
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            color: white;
+            margin-bottom: 1rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            animation: fadeIn 1s ease-out 0.5s backwards;
+        }
+
+        .hero .subtitle {
+            font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+            color: rgba(255, 255, 255, 0.85);
+            margin-bottom: 2rem;
+            font-weight: 400;
+            animation: fadeIn 1s ease-out 0.7s backwards;
+        }
+
+        .hero .tagline {
+            font-size: clamp(0.95rem, 2vw, 1.1rem);
+            color: rgba(255, 255, 255, 0.7);
+            max-width: 700px;
+            margin: 0 auto 2.5rem;
+            line-height: 1.8;
+            animation: fadeIn 1s ease-out 0.9s backwards;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            animation: fadeIn 1s ease-out 1.1s backwards;
+        }
+
+        .btn {
+            padding: 0.9rem 2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: inline-block;
+            font-size: 0.95rem;
+            letter-spacing: 0.02em;
+        }
+
+        .btn-primary {
+            background: var(--accent);
+            color: white;
+            box-shadow: 0 4px 15px rgba(233, 69, 96, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 25px rgba(233, 69, 96, 0.4);
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            backdrop-filter: blur(10px);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.2);
+            border-color: rgba(255, 255, 255, 0.5);
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Section Styling */
+        section {
+            padding: 5rem 0;
+            animation: fadeInSection 0.8s ease-out;
+        }
+
+        @keyframes fadeInSection {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-title {
+            font-family: 'Crimson Pro', serif;
+            font-size: clamp(2rem, 4vw, 3rem);
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-weight: 700;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 4px;
+            background: var(--accent);
+            border-radius: 2px;
+        }
+
+        .section-subtitle {
+            color: var(--text-light);
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 1.5rem auto 0;
+        }
+
+        /* About Section */
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-text p {
+            margin-bottom: 1.2rem;
+            font-size: 1.05rem;
+            color: var(--text-dark);
+        }
+
+        .about-text p:last-child {
+            margin-bottom: 0;
+        }
+
+        .about-image-placeholder {
+            width: 100%;
+            aspect-ratio: 4/5;
+            background: var(--gradient);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 3rem;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Experience Section */
+        .experience-grid {
+            display: grid;
+            gap: 2rem;
+        }
+
+        .experience-item {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            border-left: 4px solid var(--accent);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .experience-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+        }
+
+        .experience-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .experience-title {
+            flex: 1;
+        }
+
+        .experience-title h3 {
+            font-family: 'Crimson Pro', serif;
+            font-size: 1.5rem;
+            color: var(--primary);
+            margin-bottom: 0.3rem;
+        }
+
+        .company {
+            color: var(--accent);
+            font-weight: 600;
+            font-size: 1.05rem;
+        }
+
+        .date {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            white-space: nowrap;
+        }
+
+        .experience-item ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .experience-item li {
+            padding-left: 1.5rem;
+            margin-bottom: 0.7rem;
+            position: relative;
+            color: var(--text-dark);
+        }
+
+        .experience-item li::before {
+            content: '▹';
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-weight: bold;
+        }
+
+        /* Publications Section */
+        .publications-grid {
+            display: grid;
+            gap: 2rem;
+        }
+
+        .publication-item {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .publication-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+        }
+
+        .publication-item h3 {
+            font-family: 'Crimson Pro', serif;
+            font-size: 1.3rem;
+            color: var(--primary);
+            margin-bottom: 0.8rem;
+            line-height: 1.4;
+        }
+
+        .authors {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            margin-bottom: 0.5rem;
+            font-style: italic;
+        }
+
+        .publication-type {
+            display: inline-block;
+            padding: 0.3rem 0.8rem;
+            background: rgba(233, 69, 96, 0.1);
+            color: var(--accent);
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-top: 0.5rem;
+        }
+
+        /* Presentations Section */
+        .presentations-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .presentation-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .presentation-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+        }
+
+        .presentation-card h3 {
+            font-family: 'Crimson Pro', serif;
+            font-size: 1.2rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            line-height: 1.4;
+        }
+
+        .presentation-details {
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        .presentation-details p {
+            margin-bottom: 0.5rem;
+        }
+
+        /* Skills Section */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .skill-category {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        .skill-category h3 {
+            font-family: 'Crimson Pro', serif;
+            font-size: 1.3rem;
+            color: var(--primary);
+            margin-bottom: 1.2rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .skill-category h3::before {
+            content: '';
+            width: 4px;
+            height: 24px;
+            background: var(--accent);
+            border-radius: 2px;
+        }
+
+        .skills-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+        }
+
+        .skill-tag {
+            padding: 0.5rem 1rem;
+            background: rgba(102, 126, 234, 0.1);
+            color: var(--secondary);
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        /* Contact Section */
+        #contact {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: white;
+        }
+
+        #contact .section-title {
+            color: white;
+        }
+
+        #contact .section-title::after {
+            background: var(--accent);
+        }
+
+        #contact .section-subtitle {
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .contact-card {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 2rem;
+            border-radius: 12px;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+
+        .contact-card:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateY(-5px);
+        }
+
+        .contact-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .contact-card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-card a {
+            color: rgba(255, 255, 255, 0.9);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .contact-card a:hover {
+            color: var(--accent);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--primary);
+            color: rgba(255, 255, 255, 0.7);
+            text-align: center;
+            padding: 2rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+
+            .experience-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .presentations-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <!-- Replace this div with an actual image -->
+            <div class="profile-image-placeholder">NA</div>
+            <!-- To add your photo: Replace the div above with:
+                 <img src="your-photo.jpg" alt="Nimotallahi Azeez" class="profile-image-placeholder" style="object-fit: cover;"> -->
+            
+            <h1>Nimotallahi Azeez</h1>
+            <p class="subtitle">Technical Communication Specialist</p>
+            <p class="tagline">M.A. Candidate in Professional Technical Communication | Content Developer | Educator passionate about creating clear, accessible, and impactful communication</p>
+            <div class="cta-buttons">
+                <a href="#contact" class="btn btn-primary">Get In Touch</a>
+                <a href="#experience" class="btn btn-secondary">View My Work</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">About Me</h2>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>I am a dedicated technical communication professional currently pursuing my M.A. in English (Professional Technical Communication) at Tennessee Technological University, with an expected graduation in August 2026.</p>
+                    
+                    <p>My expertise spans content development, educational programming, and customer-centric communication. I have a proven track record of designing clear, accessible documentation and creating engaging educational content that fosters leadership development and community engagement.</p>
+                    
+                    <p>With experience in teaching, content creation, and public information development, I bring a unique perspective to technical communication—one that prioritizes clarity, user experience, and meaningful engagement. I am passionate about leveraging communication strategies to solve complex problems and enhance user understanding.</p>
+                    
+                    <p>I am actively involved in the technical communication community through conference presentations, research publications, and continuous professional development.</p>
+                </div>
+                <div class="about-image-placeholder">
+                    <!-- Replace with actual photo -->
+                    📸
+                </div>
+                <!-- To add your photo: Replace the div above with:
+                     <img src="about-photo.jpg" alt="Nimotallahi Azeez" style="width: 100%; aspect-ratio: 4/5; object-fit: cover; border-radius: 12px; box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);"> -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Experience</h2>
+                <p class="section-subtitle">My professional journey in technical communication, education, and content development</p>
+            </div>
+            <div class="experience-grid">
+                <div class="experience-item">
+                    <div class="experience-header">
+                        <div class="experience-title">
+                            <h3>Program Development and Community Engagement Associate</h3>
+                            <p class="company">Office of Intercultural Affairs, Tennessee Technological University</p>
+                        </div>
+                        <span class="date">Fall 2025</span>
+                    </div>
+                    <ul>
+                        <li>Designed and implemented leadership development programming focused on communication, mentorship, and community engagement</li>
+                        <li>Created weekly educational content for mentors and mentees to develop communication skills and support leadership growth</li>
+                        <li>Assessed participant engagement and feedback to continuously adapt program activities, ensuring relevance and effectiveness</li>
+                    </ul>
+                </div>
+
+                <div class="experience-item">
+                    <div class="experience-header">
+                        <div class="experience-title">
+                            <h3>Graduate Teaching Assistant</h3>
+                            <p class="company">Tennessee Technological University</p>
+                        </div>
+                        <span class="date">August 2024 - Present</span>
+                    </div>
+                    <ul>
+                        <li>Design and deliver course content, including lectures, discussions, and writing assignments</li>
+                        <li>Facilitate class engagement through interactive activities, collaborative exercises, and reflective discussions</li>
+                        <li>Provide constructive feedback on student drafts, focusing on clarity, coherence, and grammar</li>
+                        <li>Maintain organized tracking of student progress, documentation, and follow-up communications</li>
+                        <li>Offer one-on-one support to students, helping them develop ideas and refine arguments</li>
+                    </ul>
+                </div>
+
+                <div class="experience-item">
+                    <div class="experience-header">
+                        <div class="experience-title">
+                            <h3>Customer Support Representative</h3>
+                            <p class="company">Field Nation</p>
+                        </div>
+                        <span class="date">August 2023 - August 2024</span>
+                    </div>
+                    <ul>
+                        <li>Handled incoming customer calls and service requests, resolving issues or forwarding to appropriate teams</li>
+                        <li>Maintained accurate records of all customer interactions using CRM tools</li>
+                        <li>Assisted in collecting and organizing customer feedback to improve support materials and service quality</li>
+                        <li>Supported team coordination through clear cross-departmental communication</li>
+                    </ul>
+                </div>
+
+                <div class="experience-item">
+                    <div class="experience-header">
+                        <div class="experience-title">
+                            <h3>Information Developer</h3>
+                            <p class="company">Ministry of Information and Strategy, Nigeria</p>
+                        </div>
+                        <span class="date">July 2022 - July 2023</span>
+                    </div>
+                    <ul>
+                        <li>Created and revised official communications including press releases, briefing notes, and public service announcements</li>
+                        <li>Ensured clarity, accuracy, and consistency in line with ministry guidelines</li>
+                        <li>Proofread and edited all communications to meet government style guides, achieving 95% error-free published materials</li>
+                        <li>Contributed to public information campaigns and awareness initiatives, including developing visual aids</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Publications Section -->
+    <section id="publications">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Publications</h2>
+                <p class="section-subtitle">My contributions to academic research and professional literature</p>
+            </div>
+            <div class="publications-grid">
+                <div class="publication-item">
+                    <h3>Beyond refusal: "Co-intelligence" and "Coded Gaze" as AI pedagogies</h3>
+                    <p class="authors">Ramler, M., Askins, S., Azeez, N., Barnes, K., Begum, A., Grubbs, N. G.</p>
+                    <p style="color: var(--text-dark); margin-top: 0.8rem;">In: AI in Technical Communication: Emerging Technologies and Pedagogies. Routledge.</p>
+                    <span class="publication-type">Book Chapter (Forthcoming)</span>
+                </div>
+
+                <div class="publication-item">
+                    <h3>Artificial intelligence governance: Legal and public policy implications for data privacy and algorithmic accountability</h3>
+                    <p class="authors">Ighofiomoni, M. O., Awoyomi, O. O., Popoola, R., Ahaiwe, E. C., Chinonyerem, C. A., Azeez, N. A.</p>
+                    <p style="color: var(--text-dark); margin-top: 0.8rem;">International Journal of Humanities, Literature and Art Research, 10(6). (2025)</p>
+                    <a href="https://doi.org/10.70382/mejhlar.v10i6.078" target="_blank" style="color: var(--accent); text-decoration: none; font-weight: 600; display: inline-block; margin-top: 0.5rem;">View Publication →</a>
+                    <span class="publication-type">Journal Article</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Presentations Section -->
+    <section id="presentations" style="background: var(--light);">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Conference Presentations</h2>
+                <p class="section-subtitle">Sharing insights on accessible technology and AI in communication</p>
+            </div>
+            <div class="presentations-grid">
+                <div class="presentation-card">
+                    <h3>"The Need to Design Accessible Technology Tools for Childhood Education"</h3>
+                    <div class="presentation-details">
+                        <p><strong>Conference:</strong> Appalachian Conference</p>
+                        <p><strong>Location:</strong> Cookeville, TN</p>
+                        <p><strong>Date:</strong> March 21, 2025</p>
+                    </div>
+                </div>
+
+                <div class="presentation-card">
+                    <h3>"ChatGPT 5 and Me: Writing in the Age of Automation"</h3>
+                    <div class="presentation-details">
+                        <p><strong>Conference:</strong> National High School Journalism Convention</p>
+                        <p><strong>Location:</strong> Nashville, TN</p>
+                        <p><strong>Date:</strong> November 14, 2025</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Skills & Expertise</h2>
+                <p class="section-subtitle">Technical and professional competencies</p>
+            </div>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>Communication</h3>
+                    <div class="skills-list">
+                        <span class="skill-tag">Technical Writing</span>
+                        <span class="skill-tag">Content Development</span>
+                        <span class="skill-tag">Public Speaking</span>
+                        <span class="skill-tag">Educational Content</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3>Tools & Software</h3>
+                    <div class="skills-list">
+                        <span class="skill-tag">MadCap Flare</span>
+                        <span class="skill-tag">SharePoint</span>
+                        <span class="skill-tag">Confluence</span>
+                        <span class="skill-tag">Microsoft Office Suite</span>
+                        <span class="skill-tag">Canva</span>
+                        <span class="skill-tag">CRM Systems</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3>Professional Skills</h3>
+                    <div class="skills-list">
+                        <span class="skill-tag">Project Management</span>
+                        <span class="skill-tag">Team Collaboration</span>
+                        <span class="skill-tag">Problem Solving</span>
+                        <span class="skill-tag">Attention to Detail</span>
+                        <span class="skill-tag">Adaptability</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section-header" style="margin-top: 4rem;">
+                <h3 style="font-family: 'Crimson Pro', serif; font-size: 1.8rem; color: var(--primary);">Certifications</h3>
+            </div>
+            <div class="skills-list" style="justify-content: center; max-width: 800px; margin: 0 auto;">
+                <span class="skill-tag">Customer Service Relationship Management</span>
+                <span class="skill-tag">Project Management</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Let's Connect</h2>
+                <p class="section-subtitle">I'm always open to discussing technical communication opportunities, collaborations, or speaking engagements</p>
+            </div>
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <div class="contact-icon">📧</div>
+                    <h3>Email</h3>
+                    <a href="mailto:azeeezadesayo@gmail.com">azeeezadesayo@gmail.com</a>
+                </div>
+                <div class="contact-card">
+                    <div class="contact-icon">📱</div>
+                    <h3>Phone</h3>
+                    <a href="tel:+19312843581">+1 (931) 284-3581</a>
+                </div>
+                <div class="contact-card">
+                    <div class="contact-icon">📍</div>
+                    <h3>Location</h3>
+                    <p>Cookeville, Tennessee</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Nimotallahi Azeez. All rights reserved.</p>
+    </footer>
+</body>
+</html>
