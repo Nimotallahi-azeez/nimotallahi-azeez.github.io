@@ -4,431 +4,660 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nimotallahi Azeez | Technical Communication Specialist</title>
-    <meta name="description" content="Portfolio of Nimotallahi Azeez - Technical Communication Specialist, Content Developer, and Educator">
-    
+    <meta name="description" content="Portfolio of Nimotallahi Azeez — M.A. Candidate, Technical Communication Specialist, Content Developer, and Educator.">
+
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;600;700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
-    
-    <!-- Styles -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Navigation Bar -->
-    <nav class="navbar" id="navbar">
-        <div class="nav-container">
-            <a href="#hero" class="nav-logo">NA</a>
-            <ul class="nav-menu" id="nav-menu">
-                <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
-                <li class="nav-item"><a href="#experience" class="nav-link">Experience</a></li>
-                <li class="nav-item"><a href="#publications" class="nav-link">Publications</a></li>
-                <li class="nav-item"><a href="#presentations" class="nav-link">Presentations</a></li>
-                <li class="nav-item"><a href="#skills" class="nav-link">Skills</a></li>
-                <li class="nav-item"><a href="#contact" class="nav-link nav-link-cta">Contact</a></li>
-            </ul>
-            <div class="hamburger" id="hamburger">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </div>
-        </div>
-    </nav>
 
-    <!-- Scroll Progress Bar -->
-    <div class="progress-bar" id="progress-bar"></div>
+<!-- Skip Link -->
+<a href="#about" class="skip-link">Skip to main content</a>
 
-    <!-- Hero Section -->
-    <section class="hero" id="hero">
-        <div class="hero-background">
-            <div class="particles" id="particles"></div>
+<!-- Scroll Progress -->
+<div class="progress-bar" id="progress-bar"></div>
+
+<!-- ============================================================
+     NAVIGATION
+     ============================================================ -->
+<nav class="navbar" id="navbar">
+    <div class="nav-inner">
+        <a href="#hero" class="nav-logo">
+            <span class="logo-initials">NA</span>
+            <span class="logo-dot"></span>
+        </a>
+        <ul class="nav-menu" id="nav-menu">
+            <li><a href="#about"         class="nav-link">About</a></li>
+            <li><a href="#experience"    class="nav-link">Experience</a></li>
+            <li><a href="#publications"  class="nav-link">Research</a></li>
+            <li><a href="#presentations" class="nav-link">Talks</a></li>
+            <li><a href="#gallery"       class="nav-link">Gallery</a></li>
+            <li><a href="#skills"        class="nav-link">Skills</a></li>
+            <li><a href="#contact"       class="nav-link nav-cta">Contact</a></li>
+        </ul>
+        <button class="hamburger" id="hamburger" aria-label="Open menu">
+            <span></span><span></span><span></span>
+        </button>
+    </div>
+</nav>
+
+<!-- ============================================================
+     HERO
+     ============================================================ -->
+<section class="hero" id="hero">
+    <div class="hero-bg">
+        <div class="hero-grid"></div>
+        <div class="hero-glow glow-1"></div>
+        <div class="hero-glow glow-2"></div>
+        <div class="hero-orbs" id="hero-orbs"></div>
+    </div>
+
+    <div class="hero-content">
+        <div class="hero-badge">M.A. Candidate · Tennessee Tech · 2026</div>
+
+        <div class="hero-photo-wrap">
+            <div class="photo-ring ring-1"></div>
+            <div class="photo-ring ring-2"></div>
+            <img src="profile.jpg" alt="Nimotallahi Azeez" class="hero-photo" id="hero-photo">
         </div>
-        <div class="hero-content">
-            <!-- Replace this div with your actual image -->
-            <div class="profile-image-container">
-                <!-- <div class="profile-image-placeholder" id="profile-image">
-                    NA
-                </div> -->
-                <!-- To add your photo:
-                1. Upload your image to GitHub (name it profile.jpg)
-                2. Replace the div above with:
-                -->
-                <img src="profile.jpg" alt="Nimotallahi Azeez" id="profile-image"> 
+
+        <h1 class="hero-name">
+            <span class="name-first">Nimotallahi</span>
+            <span class="name-last">Azeez</span>
+        </h1>
+
+        <p class="hero-title-text">Technical Communication Specialist</p>
+        <p class="hero-tagline">Content Developer · Educator · Researcher passionate about clear, accessible, and impactful communication</p>
+
+        <div class="hero-links">
+            <a href="https://linkedin.com/in/yourprofile" target="_blank" class="hero-icon-link" aria-label="LinkedIn">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+            </a>
+            <a href="mailto:nazeez42@tntech.edu" class="hero-icon-link" aria-label="Email">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            </a>
+            <a href="tel:+19312843581" class="hero-icon-link" aria-label="Phone">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            </a>
+        </div>
+
+        <div class="hero-actions">
+            <a href="#contact" class="btn btn-primary">Get In Touch</a>
+            <a href="cv.pdf" download class="btn btn-outline">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                Download CV
+            </a>
+        </div>
+
+        <div class="hero-scroll">
+            <span>Scroll to explore</span>
+            <div class="scroll-line"><div class="scroll-dot"></div></div>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================================
+     ABOUT
+     ============================================================ -->
+<section id="about" class="section reveal">
+    <div class="container">
+        <div class="section-label">01 — About</div>
+        <div class="about-grid">
+            <div class="about-photo-col">
+                <div class="about-photo-frame">
+                    <img src="about-photo.jpg" alt="Nimotallahi Azeez" class="about-photo">
+                    <div class="about-photo-accent"></div>
+                </div>
+                <div class="about-stats">
+                    <div class="stat-box">
+                        <span class="stat-num" data-target="4">0</span>
+                        <span class="stat-lbl">Years<br>Experience</span>
+                    </div>
+                    <div class="stat-box">
+                        <span class="stat-num" data-target="2">0</span>
+                        <span class="stat-lbl">Research<br>Publications</span>
+                    </div>
+                    <div class="stat-box">
+                        <span class="stat-num" data-target="2">0</span>
+                        <span class="stat-lbl">Conference<br>Talks</span>
+                    </div>
+                </div>
             </div>
-            
-            <h1 class="hero-title">
-                <span class="typing-text">Hi, I'm Nimotallahi Azeez</span>
-            </h1>
-            <p class="subtitle">Technical Communication Specialist</p>
-            <p class="tagline">M.A. Candidate in Professional Technical Communication | Content Developer | Educator passionate about creating clear, accessible, and impactful communication</p>
-            
-            <!-- Social Links -->
-            <div class="social-links">
-                <!-- REPLACE with your actual LinkedIn profile URL -->
-                <a href="https://linkedin.com/in/yourprofile" target="_blank" class="social-link" aria-label="LinkedIn" title="LinkedIn">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
-                        <rect x="2" y="9" width="4" height="12"></rect>
-                        <circle cx="4" cy="4" r="2"></circle>
-                    </svg>
+
+            <div class="about-text-col">
+                <h2 class="section-title">Communicating complexity<br><em>with clarity.</em></h2>
+                <p>I am a dedicated technical communication professional currently pursuing my <strong>M.A. in English (Professional Technical Communication)</strong> at Tennessee Technological University, with an expected graduation in August 2026.</p>
+                <p>My expertise spans content development, educational programming, and customer-centric communication. I have a proven track record of designing clear, accessible documentation and creating engaging educational content that fosters leadership development and community engagement.</p>
+                <p>With experience in teaching, content creation, and public information development, I bring a unique perspective to technical communication — one that prioritises clarity, user experience, and meaningful engagement.</p>
+                <p>I am actively involved in the technical communication community through conference presentations, research publications, and continuous professional development.</p>
+                <a href="cv.pdf" download class="btn btn-primary" style="margin-top:1.5rem; display:inline-flex; gap:.5rem; align-items:center;">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                    Download Full CV
                 </a>
-                <a href="mailto:azeeezadesayo@gmail.com" class="social-link" aria-label="Email" title="Email">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
-                        <polyline points="22,6 12,13 2,6"></polyline>
-                    </svg>
-                </a>
-                <a href="tel:+19312843581" class="social-link" aria-label="Phone" title="Phone">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
-                    </svg>
-                </a>
-            </div>
-            
-            <div class="cta-buttons">
-                <a href="#contact" class="btn btn-primary">Get In Touch</a>
-                <a href="#experience" class="btn btn-secondary">View My Work</a>
-            </div>
-            
-            <div class="scroll-indicator">
-                <span>Scroll to explore</span>
-                <div class="scroll-arrow">↓</div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- About Section -->
-    <section id="about" class="section-fade-in">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">About Me</h2>
+<!-- ============================================================
+     EXPERIENCE
+     ============================================================ -->
+<section id="experience" class="section section-alt reveal">
+    <div class="container">
+        <div class="section-label">02 — Experience</div>
+        <h2 class="section-title">Professional<br><em>Journey</em></h2>
+        <p class="section-sub">My professional journey in technical communication, education, and content development</p>
+
+        <div class="view-toggle">
+            <button class="toggle-btn active" data-view="list">List View</button>
+            <button class="toggle-btn" data-view="timeline">Timeline View</button>
+        </div>
+
+        <!-- List View -->
+        <div class="exp-list" id="list-view">
+            <div class="exp-card reveal-child">
+                <div class="exp-meta">
+                    <span class="exp-date">Fall 2025</span>
+                    <span class="exp-type">Current</span>
+                </div>
+                <h3>Program Development and Community Engagement Associate</h3>
+                <p class="exp-company">Office of Intercultural Affairs · Tennessee Technological University</p>
+                <ul class="exp-bullets">
+                    <li>Designed and implemented leadership development programming focused on communication, mentorship, and community engagement</li>
+                    <li>Created weekly educational content for mentors and mentees to develop communication skills and support leadership growth</li>
+                    <li>Assessed participant engagement and feedback to continuously adapt program activities, ensuring relevance and effectiveness</li>
+                </ul>
             </div>
-            <div class="about-content">
-                <div class="about-text">
-                    <p>I am a dedicated technical communication professional currently pursuing my M.A. in English (Professional Technical Communication) at Tennessee Technological University, with an expected graduation in August 2026.</p>
-                    
-                    <p>My expertise spans content development, educational programming, and customer-centric communication. I have a proven track record of designing clear, accessible documentation and creating engaging educational content that fosters leadership development and community engagement.</p>
-                    
-                    <p>With experience in teaching, content creation, and public information development, I bring a unique perspective to technical communication—one that prioritizes clarity, user experience, and meaningful engagement. I am passionate about leveraging communication strategies to solve complex problems and enhance user understanding.</p>
-                    
-                    <p>I am actively involved in the technical communication community through conference presentations, research publications, and continuous professional development.</p>
-                    
-                    <!-- Stats Counter -->
-                    <div class="stats-grid">
-                        <div class="stat-item">
-                            <div class="stat-number" data-target="4">0</div>
-                            <div class="stat-label">Years Experience</div>
-                        </div>
-                        <div class="stat-item">
-                            <div class="stat-number" data-target="2">0</div>
-                            <div class="stat-label">Publications</div>
-                        </div>
-                        <div class="stat-item">
-                            <div class="stat-number" data-target="2">0</div>
-                            <div class="stat-label">Presentations</div>
-                        </div>
-                    </div>
+
+            <div class="exp-card reveal-child">
+                <div class="exp-meta">
+                    <span class="exp-date">Aug 2024 – Present</span>
+                    <span class="exp-type">Academic</span>
                 </div>
-                <div class="about-image-wrapper">
-                    <!-- <div class="about-image-placeholder">
-                        📸
-                    </div> -->
-                    <!-- To add your photo:
-                    1. Upload your image to GitHub (name it about-photo.jpg)
-                    2. Replace the div above with:
-                    -->
-                    <img src="about-photo.jpg" alt="Nimotallahi Azeez" class="about-image"> 
+                <h3>Graduate Teaching Assistant</h3>
+                <p class="exp-company">Tennessee Technological University</p>
+                <ul class="exp-bullets">
+                    <li>Design and deliver course content, including lectures, discussions, and writing assignments</li>
+                    <li>Facilitate class engagement through interactive activities and collaborative exercises</li>
+                    <li>Provide constructive feedback on student drafts, focusing on clarity, coherence, and grammar</li>
+                    <li>Maintain organised tracking of student progress, documentation, and follow-up communications</li>
+                    <li>Offer one-on-one support to students, helping them develop ideas and refine arguments</li>
+                </ul>
+            </div>
+
+            <div class="exp-card reveal-child">
+                <div class="exp-meta">
+                    <span class="exp-date">Aug 2023 – Aug 2024</span>
+                    <span class="exp-type">Industry</span>
                 </div>
+                <h3>Customer Support Representative</h3>
+                <p class="exp-company">Field Nation</p>
+                <ul class="exp-bullets">
+                    <li>Handled incoming customer calls and service requests, resolving issues or forwarding to appropriate teams</li>
+                    <li>Maintained accurate records of all customer interactions using CRM tools</li>
+                    <li>Assisted in collecting and organising customer feedback to improve support materials</li>
+                    <li>Supported team coordination through clear cross-departmental communication</li>
+                </ul>
+            </div>
+
+            <div class="exp-card reveal-child">
+                <div class="exp-meta">
+                    <span class="exp-date">Jul 2022 – Jul 2023</span>
+                    <span class="exp-type">Government</span>
+                </div>
+                <h3>Information Developer</h3>
+                <p class="exp-company">Ministry of Information and Strategy, Nigeria</p>
+                <ul class="exp-bullets">
+                    <li>Created and revised official communications including press releases, briefing notes, and public service announcements</li>
+                    <li>Proofread and edited all communications to meet government style guides, achieving 95% error-free published materials</li>
+                    <li>Contributed to public information campaigns and awareness initiatives, including developing visual aids</li>
+                </ul>
             </div>
         </div>
-    </section>
 
-    <!-- Experience Section -->
-    <section id="experience" class="section-fade-in">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Experience</h2>
-                <p class="section-subtitle">My professional journey in technical communication, education, and content development</p>
-            </div>
-            
-            <!-- Timeline Toggle -->
-            <div class="view-toggle">
-                <button class="toggle-btn active" data-view="list">List View</button>
-                <button class="toggle-btn" data-view="timeline">Timeline View</button>
-            </div>
-            
-            <div class="experience-container" id="experience-container">
-                <!-- List View -->
-                <div class="experience-grid view-list active" id="list-view">
-                    <div class="experience-item" data-aos="fade-up">
-                        <div class="experience-header">
-                            <div class="experience-title">
-                                <h3>Program Development and Community Engagement Associate</h3>
-                                <p class="company">Office of Intercultural Affairs, Tennessee Technological University</p>
-                            </div>
-                            <span class="date">Fall 2025</span>
-                        </div>
-                        <ul>
-                            <li>Designed and implemented leadership development programming focused on communication, mentorship, and community engagement</li>
-                            <li>Created weekly educational content for mentors and mentees to develop communication skills and support leadership growth</li>
-                            <li>Assessed participant engagement and feedback to continuously adapt program activities, ensuring relevance and effectiveness</li>
-                        </ul>
-                    </div>
-
-                    <div class="experience-item" data-aos="fade-up" data-aos-delay="100">
-                        <div class="experience-header">
-                            <div class="experience-title">
-                                <h3>Graduate Teaching Assistant</h3>
-                                <p class="company">Tennessee Technological University</p>
-                            </div>
-                            <span class="date">August 2024 - Present</span>
-                        </div>
-                        <ul>
-                            <li>Design and deliver course content, including lectures, discussions, and writing assignments</li>
-                            <li>Facilitate class engagement through interactive activities, collaborative exercises, and reflective discussions</li>
-                            <li>Provide constructive feedback on student drafts, focusing on clarity, coherence, and grammar</li>
-                            <li>Maintain organized tracking of student progress, documentation, and follow-up communications</li>
-                            <li>Offer one-on-one support to students, helping them develop ideas and refine arguments</li>
-                        </ul>
-                    </div>
-
-                    <div class="experience-item" data-aos="fade-up" data-aos-delay="200">
-                        <div class="experience-header">
-                            <div class="experience-title">
-                                <h3>Customer Support Representative</h3>
-                                <p class="company">Field Nation</p>
-                            </div>
-                            <span class="date">August 2023 - August 2024</span>
-                        </div>
-                        <ul>
-                            <li>Handled incoming customer calls and service requests, resolving issues or forwarding to appropriate teams</li>
-                            <li>Maintained accurate records of all customer interactions using CRM tools</li>
-                            <li>Assisted in collecting and organizing customer feedback to improve support materials and service quality</li>
-                            <li>Supported team coordination through clear cross-departmental communication</li>
-                        </ul>
-                    </div>
-
-                    <div class="experience-item" data-aos="fade-up" data-aos-delay="300">
-                        <div class="experience-header">
-                            <div class="experience-title">
-                                <h3>Information Developer</h3>
-                                <p class="company">Ministry of Information and Strategy, Nigeria</p>
-                            </div>
-                            <span class="date">July 2022 - July 2023</span>
-                        </div>
-                        <ul>
-                            <li>Created and revised official communications including press releases, briefing notes, and public service announcements</li>
-                            <li>Ensured clarity, accuracy, and consistency in line with ministry guidelines</li>
-                            <li>Proofread and edited all communications to meet government style guides, achieving 95% error-free published materials</li>
-                            <li>Contributed to public information campaigns and awareness initiatives, including developing visual aids</li>
-                        </ul>
-                    </div>
+        <!-- Timeline View -->
+        <div class="exp-timeline" id="timeline-view" style="display:none;">
+            <div class="tl-line"></div>
+            <div class="tl-item tl-right">
+                <div class="tl-dot"></div>
+                <div class="tl-card">
+                    <span class="tl-date">Fall 2025</span>
+                    <h3>Program Development & Community Engagement Associate</h3>
+                    <p>Office of Intercultural Affairs · Tennessee Tech</p>
                 </div>
-                
-                <!-- Timeline View -->
-                <div class="timeline view-timeline" id="timeline-view">
-                    <div class="timeline-item" data-aos="fade-right">
-                        <div class="timeline-dot"></div>
-                        <div class="timeline-content">
-                            <span class="timeline-date">Fall 2025</span>
-                            <h3>Program Development and Community Engagement Associate</h3>
-                            <p class="company">Office of Intercultural Affairs, Tennessee Tech</p>
-                        </div>
-                    </div>
-                    <div class="timeline-item" data-aos="fade-left">
-                        <div class="timeline-dot"></div>
-                        <div class="timeline-content">
-                            <span class="timeline-date">August 2024 - Present</span>
-                            <h3>Graduate Teaching Assistant</h3>
-                            <p class="company">Tennessee Technological University</p>
-                        </div>
-                    </div>
-                    <div class="timeline-item" data-aos="fade-right">
-                        <div class="timeline-dot"></div>
-                        <div class="timeline-content">
-                            <span class="timeline-date">August 2023 - August 2024</span>
-                            <h3>Customer Support Representative</h3>
-                            <p class="company">Field Nation</p>
-                        </div>
-                    </div>
-                    <div class="timeline-item" data-aos="fade-left">
-                        <div class="timeline-dot"></div>
-                        <div class="timeline-content">
-                            <span class="timeline-date">July 2022 - July 2023</span>
-                            <h3>Information Developer</h3>
-                            <p class="company">Ministry of Information and Strategy, Nigeria</p>
-                        </div>
-                    </div>
+            </div>
+            <div class="tl-item tl-left">
+                <div class="tl-dot"></div>
+                <div class="tl-card">
+                    <span class="tl-date">Aug 2024 – Present</span>
+                    <h3>Graduate Teaching Assistant</h3>
+                    <p>Tennessee Technological University</p>
+                </div>
+            </div>
+            <div class="tl-item tl-right">
+                <div class="tl-dot"></div>
+                <div class="tl-card">
+                    <span class="tl-date">Aug 2023 – Aug 2024</span>
+                    <h3>Customer Support Representative</h3>
+                    <p>Field Nation</p>
+                </div>
+            </div>
+            <div class="tl-item tl-left">
+                <div class="tl-dot"></div>
+                <div class="tl-card">
+                    <span class="tl-date">Jul 2022 – Jul 2023</span>
+                    <h3>Information Developer</h3>
+                    <p>Ministry of Information and Strategy, Nigeria</p>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- Publications Section -->
-    <section id="publications" class="section-fade-in">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Publications</h2>
-                <p class="section-subtitle">My contributions to academic research and professional literature</p>
-            </div>
-            <div class="publications-grid">
-                <div class="publication-item" data-aos="zoom-in">
-                    <div class="publication-icon">📚</div>
-                    <h3>Beyond refusal: "Co-intelligence" and "Coded Gaze" as AI pedagogies</h3>
-                    <p class="authors">Ramler, M., Askins, S., Azeez, N., Barnes, K., Begum, A., Grubbs, N. G.</p>
-                    <p class="publication-details">In: AI in Technical Communication: Emerging Technologies and Pedagogies. Routledge.</p>
-                    <span class="publication-type">Book Chapter (Forthcoming)</span>
+<!-- ============================================================
+     PUBLICATIONS / RESEARCH
+     ============================================================ -->
+<section id="publications" class="section reveal">
+    <div class="container">
+        <div class="section-label">03 — Research</div>
+        <h2 class="section-title">Publications &amp;<br><em>Scholarship</em></h2>
+        <p class="section-sub">My contributions to academic research and professional literature</p>
+
+        <div class="pub-grid">
+            <!-- Publication 1 -->
+            <article class="pub-card reveal-child">
+                <div class="pub-top">
+                    <span class="pub-badge">Book Chapter · Forthcoming</span>
+                    <span class="pub-year">2025</span>
                 </div>
-
-                <div class="publication-item" data-aos="zoom-in" data-aos-delay="100">
-                    <div class="publication-icon">📄</div>
-                    <h3>Artificial intelligence governance: Legal and public policy implications for data privacy and algorithmic accountability</h3>
-                    <p class="authors">Ighofiomoni, M. O., Awoyomi, O. O., Popoola, R., Ahaiwe, E. C., Chinonyerem, C. A., Azeez, N. A.</p>
-                    <p class="publication-details">International Journal of Humanities, Literature and Art Research, 10(6). (2025)</p>
-                    <a href="https://doi.org/10.70382/mejhlar.v10i6.078" target="_blank" class="publication-link">
-                        View Publication →
+                <h3>"Beyond refusal: 'Co-intelligence' and 'Coded Gaze' as AI pedagogies"</h3>
+                <p class="pub-authors">Ramler, M., Askins, S., <strong>Azeez, N.</strong>, Barnes, K., Begum, A., Grubbs, N. G.</p>
+                <p class="pub-source">In: <em>AI in Technical Communication: Emerging Technologies and Pedagogies.</em> Routledge.</p>
+                <div class="pub-actions">
+                    <!-- Replace href with actual PDF link when available -->
+                    <a href="#" class="pub-btn pub-btn-dl" title="Download PDF (coming soon)" aria-disabled="true">
+                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                        PDF (Coming Soon)
                     </a>
-                    <span class="publication-type">Journal Article</span>
+                    <span class="pub-tag">AI Pedagogy</span>
+                    <span class="pub-tag">Technical Communication</span>
                 </div>
-            </div>
-        </div>
-    </section>
+            </article>
 
-    <!-- Presentations Section -->
-    <section id="presentations" class="section-fade-in">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Conference Presentations</h2>
-                <p class="section-subtitle">Sharing insights on accessible technology and AI in communication</p>
-            </div>
-            <div class="presentations-grid">
-                <div class="presentation-card" data-aos="flip-left">
-                    <div class="presentation-icon">🎤</div>
+            <!-- Publication 2 -->
+            <article class="pub-card reveal-child">
+                <div class="pub-top">
+                    <span class="pub-badge">Journal Article</span>
+                    <span class="pub-year">2025</span>
+                </div>
+                <h3>"Artificial intelligence governance: Legal and public policy implications for data privacy and algorithmic accountability"</h3>
+                <p class="pub-authors">Ighofiomoni, M. O., Awoyomi, O. O., Popoola, R., Ahaiwe, E. C., Chinonyerem, C. A., <strong>Azeez, N. A.</strong></p>
+                <p class="pub-source"><em>International Journal of Humanities, Literature and Art Research,</em> 10(6).</p>
+                <div class="pub-actions">
+                    <a href="https://doi.org/10.70382/mejhlar.v10i6.078" target="_blank" class="pub-btn pub-btn-view">
+                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                        View Publication
+                    </a>
+                    <!-- Add actual PDF link below when available -->
+                    <a href="papers/ai-governance.pdf" download class="pub-btn pub-btn-dl">
+                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                        Download PDF
+                    </a>
+                    <span class="pub-tag">AI Governance</span>
+                    <span class="pub-tag">Data Privacy</span>
+                </div>
+            </article>
+        </div>
+
+        <div class="pub-note reveal-child">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+            <p>For citation details or preprints, please <a href="#contact">get in touch</a>. PDFs will be added as papers are published.</p>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================================
+     PRESENTATIONS
+     ============================================================ -->
+<section id="presentations" class="section section-alt reveal">
+    <div class="container">
+        <div class="section-label">04 — Talks</div>
+        <h2 class="section-title">Conference<br><em>Presentations</em></h2>
+        <p class="section-sub">Sharing insights on accessible technology and AI in communication</p>
+
+        <div class="talks-grid">
+            <div class="talk-card reveal-child">
+                <div class="talk-num">01</div>
+                <div class="talk-body">
                     <h3>"The Need to Design Accessible Technology Tools for Childhood Education"</h3>
-                    <div class="presentation-details">
-                        <p><strong>Conference:</strong> Appalachian Conference</p>
-                        <p><strong>Location:</strong> Cookeville, TN</p>
-                        <p><strong>Date:</strong> March 21, 2025</p>
+                    <div class="talk-meta">
+                        <span class="talk-conf">Appalachian Conference</span>
+                        <span class="talk-info">📍 Cookeville, TN &nbsp;·&nbsp; March 21, 2025</span>
+                    </div>
+                    <div class="talk-tags">
+                        <span class="pub-tag">Accessibility</span>
+                        <span class="pub-tag">EdTech</span>
                     </div>
                 </div>
+            </div>
 
-                <div class="presentation-card" data-aos="flip-left" data-aos-delay="100">
-                    <div class="presentation-icon">🎤</div>
+            <div class="talk-card reveal-child">
+                <div class="talk-num">02</div>
+                <div class="talk-body">
                     <h3>"ChatGPT 5 and Me: Writing in the Age of Automation"</h3>
-                    <div class="presentation-details">
-                        <p><strong>Conference:</strong> National High School Journalism Convention</p>
-                        <p><strong>Location:</strong> Nashville, TN</p>
-                        <p><strong>Date:</strong> November 14, 2025</p>
+                    <div class="talk-meta">
+                        <span class="talk-conf">National High School Journalism Convention</span>
+                        <span class="talk-info">📍 Nashville, TN &nbsp;·&nbsp; November 14, 2025</span>
+                    </div>
+                    <div class="talk-tags">
+                        <span class="pub-tag">AI Writing</span>
+                        <span class="pub-tag">Journalism</span>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- Skills Section -->
-    <section id="skills" class="section-fade-in">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Skills & Expertise</h2>
-                <p class="section-subtitle">Technical and professional competencies</p>
-            </div>
-            <div class="skills-grid">
-                <div class="skill-category" data-aos="fade-up">
-                    <h3>Communication</h3>
-                    <div class="skills-list">
-                        <span class="skill-tag">Technical Writing</span>
-                        <span class="skill-tag">Content Development</span>
-                        <span class="skill-tag">Public Speaking</span>
-                        <span class="skill-tag">Educational Content</span>
-                    </div>
+<!-- ============================================================
+     GALLERY
+     ============================================================ -->
+<section id="gallery" class="section reveal">
+    <div class="container">
+        <div class="section-label">05 — Gallery</div>
+        <h2 class="section-title">Events &amp;<br><em>Moments</em></h2>
+        <p class="section-sub">A visual record of conferences, presentations, and professional milestones</p>
+
+        <!-- Filter Tabs -->
+        <div class="gallery-filters">
+            <button class="gf-btn active" data-filter="all">All</button>
+            <button class="gf-btn" data-filter="conference">Conferences</button>
+            <button class="gf-btn" data-filter="award">Awards</button>
+            <button class="gf-btn" data-filter="campus">Campus</button>
+        </div>
+
+        <div class="gallery-grid" id="gallery-grid">
+            <!--
+                HOW TO ADD YOUR PHOTOS:
+                1. Upload images to a folder called "gallery/" in your GitHub repo
+                2. Replace the placeholder divs below with:
+                   <div class="gallery-item" data-category="conference">
+                       <img src="gallery/your-photo.jpg" alt="Description of event">
+                       <div class="gallery-caption">
+                           <h4>Event Name</h4>
+                           <p>Date · Location</p>
+                       </div>
+                   </div>
+                
+                CATEGORIES: "conference" | "award" | "campus" | "other"
+            -->
+
+            <!-- PLACEHOLDER ITEMS — replace with your real photos -->
+            <div class="gallery-item" data-category="conference">
+                <div class="gallery-placeholder">
+                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+                    <span>Add Photo</span>
                 </div>
-
-                <div class="skill-category" data-aos="fade-up" data-aos-delay="100">
-                    <h3>Tools & Software</h3>
-                    <div class="skills-list">
-                        <span class="skill-tag">MadCap Flare</span>
-                        <span class="skill-tag">SharePoint</span>
-                        <span class="skill-tag">Confluence</span>
-                        <span class="skill-tag">Microsoft Office Suite</span>
-                        <span class="skill-tag">Canva</span>
-                        <span class="skill-tag">CRM Systems</span>
-                    </div>
-                </div>
-
-                <div class="skill-category" data-aos="fade-up" data-aos-delay="200">
-                    <h3>Professional Skills</h3>
-                    <div class="skills-list">
-                        <span class="skill-tag">Project Management</span>
-                        <span class="skill-tag">Team Collaboration</span>
-                        <span class="skill-tag">Problem Solving</span>
-                        <span class="skill-tag">Attention to Detail</span>
-                        <span class="skill-tag">Adaptability</span>
-                    </div>
+                <div class="gallery-caption">
+                    <h4>Appalachian Conference</h4>
+                    <p>March 2025 · Cookeville, TN</p>
                 </div>
             </div>
 
-            <div class="section-header" style="margin-top: 4rem;">
-                <h3 style="font-family: 'Crimson Pro', serif; font-size: 1.8rem; color: var(--primary);">Certifications</h3>
+            <div class="gallery-item" data-category="conference">
+                <div class="gallery-placeholder">
+                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+                    <span>Add Photo</span>
+                </div>
+                <div class="gallery-caption">
+                    <h4>National HS Journalism Convention</h4>
+                    <p>November 2025 · Nashville, TN</p>
+                </div>
             </div>
-            <div class="certifications-wrapper">
-                <div class="certification-badge" data-aos="zoom-in">
-                    <span>🏆</span>
+
+            <div class="gallery-item" data-category="campus">
+                <div class="gallery-placeholder">
+                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+                    <span>Add Photo</span>
+                </div>
+                <div class="gallery-caption">
+                    <h4>Tennessee Tech Campus</h4>
+                    <p>Academic Year 2024–2025</p>
+                </div>
+            </div>
+
+            <div class="gallery-item" data-category="award">
+                <div class="gallery-placeholder">
+                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+                    <span>Add Photo</span>
+                </div>
+                <div class="gallery-caption">
+                    <h4>Achievements &amp; Milestones</h4>
+                    <p>2024–2025</p>
+                </div>
+            </div>
+
+            <div class="gallery-item" data-category="campus">
+                <div class="gallery-placeholder">
+                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+                    <span>Add Photo</span>
+                </div>
+                <div class="gallery-caption">
+                    <h4>Teaching &amp; Mentoring</h4>
+                    <p>Office of Intercultural Affairs</p>
+                </div>
+            </div>
+
+            <div class="gallery-item" data-category="conference">
+                <div class="gallery-placeholder">
+                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+                    <span>Add Photo</span>
+                </div>
+                <div class="gallery-caption">
+                    <h4>Research Presentations</h4>
+                    <p>2025</p>
+                </div>
+            </div>
+        </div>
+
+        <p class="gallery-note">📸 Photos will be added as events are documented. Check back soon!</p>
+    </div>
+</section>
+
+<!-- Lightbox -->
+<div class="lightbox" id="lightbox">
+    <button class="lb-close" id="lb-close">✕</button>
+    <div class="lb-content">
+        <img src="" alt="" id="lb-img">
+        <div class="lb-caption" id="lb-caption"></div>
+    </div>
+</div>
+
+<!-- ============================================================
+     SKILLS
+     ============================================================ -->
+<section id="skills" class="section section-alt reveal">
+    <div class="container">
+        <div class="section-label">06 — Skills</div>
+        <h2 class="section-title">Expertise &amp;<br><em>Competencies</em></h2>
+
+        <div class="skills-grid">
+            <div class="skill-col reveal-child">
+                <div class="skill-col-icon">✍️</div>
+                <h3>Communication</h3>
+                <div class="skill-tags">
+                    <span class="stag">Technical Writing</span>
+                    <span class="stag">Content Development</span>
+                    <span class="stag">Public Speaking</span>
+                    <span class="stag">Educational Content</span>
+                    <span class="stag">Documentation</span>
+                </div>
+            </div>
+
+            <div class="skill-col reveal-child">
+                <div class="skill-col-icon">🛠️</div>
+                <h3>Tools &amp; Software</h3>
+                <div class="skill-tags">
+                    <span class="stag">MadCap Flare</span>
+                    <span class="stag">SharePoint</span>
+                    <span class="stag">Confluence</span>
+                    <span class="stag">Microsoft Office Suite</span>
+                    <span class="stag">Canva</span>
+                    <span class="stag">CRM Systems</span>
+                </div>
+            </div>
+
+            <div class="skill-col reveal-child">
+                <div class="skill-col-icon">🤝</div>
+                <h3>Professional</h3>
+                <div class="skill-tags">
+                    <span class="stag">Project Management</span>
+                    <span class="stag">Team Collaboration</span>
+                    <span class="stag">Problem Solving</span>
+                    <span class="stag">Attention to Detail</span>
+                    <span class="stag">Adaptability</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="certs-section reveal-child">
+            <h3 class="certs-title">Certifications</h3>
+            <div class="certs-row">
+                <div class="cert-card">
+                    <div class="cert-icon">🏆</div>
                     <p>Customer Service Relationship Management</p>
                 </div>
-                <div class="certification-badge" data-aos="zoom-in" data-aos-delay="100">
-                    <span>🏆</span>
+                <div class="cert-card">
+                    <div class="cert-icon">🏆</div>
                     <p>Project Management</p>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- Contact Section -->
-    <section id="contact">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Let's Connect</h2>
-                <p class="section-subtitle">I'm always open to discussing technical communication opportunities, collaborations, or speaking engagements</p>
-            </div>
-            <div class="contact-grid">
-                <a href="mailto:azeeezadesayo@gmail.com" class="contact-card" data-aos="fade-up">
-                    <div class="contact-icon">📧</div>
-                    <h3>Email</h3>
-                    <p>azeeezadesayo@gmail.com</p>
+<!-- ============================================================
+     CONTACT
+     ============================================================ -->
+<section id="contact" class="section contact-section reveal">
+    <div class="container">
+        <div class="section-label" style="color:rgba(255,255,255,.5)">07 — Contact</div>
+        <h2 class="section-title" style="color:white;">Let's<br><em>Connect</em></h2>
+        <p class="section-sub" style="color:rgba(255,255,255,.7);">Open to discussing technical communication opportunities, collaborations, or speaking engagements</p>
+
+        <div class="contact-layout">
+            <!-- Info Cards -->
+            <div class="contact-info">
+                <a href="mailto:nazeez42@tntech.edu" class="cinfo-card">
+                    <div class="cinfo-icon">📧</div>
+                    <div>
+                        <h4>Email</h4>
+                        <p>nazeez42@tntech.edu</p>
+                    </div>
                 </a>
-                <a href="tel:+19312843581" class="contact-card" data-aos="fade-up" data-aos-delay="100">
-                    <div class="contact-icon">📱</div>
-                    <h3>Phone</h3>
-                    <p>+1 (931) 284-3581</p>
+                <a href="tel:+19312843581" class="cinfo-card">
+                    <div class="cinfo-icon">📱</div>
+                    <div>
+                        <h4>Phone</h4>
+                        <p>+1 (931) 284-3581</p>
+                    </div>
                 </a>
-                <a href="https://linkedin.com/in/yourprofile" target="_blank" class="contact-card" data-aos="fade-up" data-aos-delay="200">
-                    <div class="contact-icon">💼</div>
-                    <h3>LinkedIn</h3>
-                    <p>Connect with me</p>
+                <a href="https://linkedin.com/in/yourprofile" target="_blank" class="cinfo-card">
+                    <div class="cinfo-icon">💼</div>
+                    <div>
+                        <h4>LinkedIn</h4>
+                        <p>Connect with me</p>
+                    </div>
                 </a>
-                <div class="contact-card" data-aos="fade-up" data-aos-delay="300">
-                    <div class="contact-icon">📍</div>
-                    <h3>Location</h3>
-                    <p>Cookeville, Tennessee</p>
+                <div class="cinfo-card">
+                    <div class="cinfo-icon">📍</div>
+                    <div>
+                        <h4>Location</h4>
+                        <p>Cookeville, Tennessee</p>
+                    </div>
                 </div>
             </div>
+
+            <!-- Contact Form -->
+            <div class="contact-form-wrap">
+                <h3>Send a Message</h3>
+                <!--
+                    FORM SETUP (no backend needed):
+                    Option A — Formspree (free, easiest):
+                      1. Go to https://formspree.io and create a free account
+                      2. Create a new form and get your form ID
+                      3. Replace "YOUR_FORM_ID" in the action below
+                      4. Done! Submissions go straight to your email.
+                    
+                    Option B — EmailJS:
+                      Follow https://www.emailjs.com/docs/tutorial/overview/
+                -->
+                <form id="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="fname">First Name</label>
+                            <input type="text" id="fname" name="first_name" placeholder="Jane" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="lname">Last Name</label>
+                            <input type="text" id="lname" name="last_name" placeholder="Smith" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" placeholder="jane@example.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <select id="subject" name="subject">
+                            <option value="">Select a topic…</option>
+                            <option>Collaboration Opportunity</option>
+                            <option>Speaking Engagement</option>
+                            <option>Research Inquiry</option>
+                            <option>General Question</option>
+                            <option>Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="5" placeholder="Tell me about your project or question…" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary form-submit">
+                        <span id="form-btn-text">Send Message</span>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+                    </button>
+                    <div class="form-status" id="form-status"></div>
+                </form>
+            </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- Back to Top Button -->
-    <button class="back-to-top" id="back-to-top" aria-label="Back to top">
-        ↑
-    </button>
+<!-- Back to Top -->
+<button class="back-top" id="back-top" aria-label="Back to top">↑</button>
 
-    <!-- Footer -->
-    <footer>
-        <div class="footer-content">
-            <p>&copy; 2026 Nimotallahi Azeez. All rights reserved.</p>
-            <p class="footer-note">Designed with passion for clear communication</p>
+<!-- ============================================================
+     FOOTER
+     ============================================================ -->
+<footer>
+    <div class="footer-inner">
+        <p class="footer-name">Nimotallahi Azeez</p>
+        <p class="footer-tagline">Technical Communication Specialist · M.A. Candidate · Tennessee Tech</p>
+        <div class="footer-links">
+            <a href="#about">About</a>
+            <a href="#experience">Experience</a>
+            <a href="#publications">Research</a>
+            <a href="#gallery">Gallery</a>
+            <a href="#contact">Contact</a>
         </div>
-    </footer>
+        <p class="footer-copy">&copy; 2026 Nimotallahi Azeez · All rights reserved</p>
+    </div>
+</footer>
 
-    <!-- JavaScript -->
-    <script src="script.js"></script>
+<script src="script.js"></script>
 </body>
 </html>
