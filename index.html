@@ -1,816 +1,1455 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nimotallahi Azeez | Technical Communication Specialist</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;600;700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --primary: #1a1a2e;
-            --secondary: #16213e;
-            --accent: #e94560;
-            --light: #f8f9fa;
-            --text-dark: #2d3748;
-            --text-light: #718096;
-            --border: #e2e8f0;
-            --gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'DM Sans', sans-serif;
-            color: var(--text-dark);
-            line-height: 1.7;
-            background: var(--light);
-            overflow-x: hidden;
-        }
-
-        /* Hero Section */
-        .hero {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
-            position: relative;
-            overflow: hidden;
-            padding: 2rem;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            width: 200%;
-            height: 200%;
-            background: 
-                radial-gradient(circle at 20% 50%, rgba(233, 69, 96, 0.1) 0%, transparent 50%),
-                radial-gradient(circle at 80% 50%, rgba(102, 126, 234, 0.1) 0%, transparent 50%);
-            animation: float 20s ease-in-out infinite;
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translate(0, 0) rotate(0deg); }
-            50% { transform: translate(-50px, -50px) rotate(5deg); }
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 2;
-            text-align: center;
-            max-width: 900px;
-            animation: fadeInUp 1s ease-out;
-        }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .profile-image-placeholder {
-            width: 180px;
-            height: 180px;
-            border-radius: 50%;
-            background: var(--gradient);
-            margin: 0 auto 2rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 4rem;
-            color: white;
-            font-weight: 700;
-            border: 5px solid rgba(255, 255, 255, 0.2);
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-            animation: fadeIn 1s ease-out 0.3s backwards;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: scale(0.8); }
-            to { opacity: 1; transform: scale(1); }
-        }
-
-        .hero h1 {
-            font-family: 'Crimson Pro', serif;
-            font-size: clamp(2.5rem, 6vw, 4.5rem);
-            color: white;
-            margin-bottom: 1rem;
-            font-weight: 700;
-            letter-spacing: -0.02em;
-            animation: fadeIn 1s ease-out 0.5s backwards;
-        }
-
-        .hero .subtitle {
-            font-size: clamp(1.1rem, 2.5vw, 1.4rem);
-            color: rgba(255, 255, 255, 0.85);
-            margin-bottom: 2rem;
-            font-weight: 400;
-            animation: fadeIn 1s ease-out 0.7s backwards;
-        }
-
-        .hero .tagline {
-            font-size: clamp(0.95rem, 2vw, 1.1rem);
-            color: rgba(255, 255, 255, 0.7);
-            max-width: 700px;
-            margin: 0 auto 2.5rem;
-            line-height: 1.8;
-            animation: fadeIn 1s ease-out 0.9s backwards;
-        }
-
-        .cta-buttons {
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
-            flex-wrap: wrap;
-            animation: fadeIn 1s ease-out 1.1s backwards;
-        }
-
-        .btn {
-            padding: 0.9rem 2rem;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            display: inline-block;
-            font-size: 0.95rem;
-            letter-spacing: 0.02em;
-        }
-
-        .btn-primary {
-            background: var(--accent);
-            color: white;
-            box-shadow: 0 4px 15px rgba(233, 69, 96, 0.3);
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 25px rgba(233, 69, 96, 0.4);
-        }
-
-        .btn-secondary {
-            background: rgba(255, 255, 255, 0.1);
-            color: white;
-            border: 2px solid rgba(255, 255, 255, 0.3);
-            backdrop-filter: blur(10px);
-        }
-
-        .btn-secondary:hover {
-            background: rgba(255, 255, 255, 0.2);
-            border-color: rgba(255, 255, 255, 0.5);
-        }
-
-        /* Main Container */
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
-        }
-
-        /* Section Styling */
-        section {
-            padding: 5rem 0;
-            animation: fadeInSection 0.8s ease-out;
-        }
-
-        @keyframes fadeInSection {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .section-header {
-            text-align: center;
-            margin-bottom: 4rem;
-        }
-
-        .section-title {
-            font-family: 'Crimson Pro', serif;
-            font-size: clamp(2rem, 4vw, 3rem);
-            color: var(--primary);
-            margin-bottom: 1rem;
-            font-weight: 700;
-            position: relative;
-            display: inline-block;
-        }
-
-        .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 60px;
-            height: 4px;
-            background: var(--accent);
-            border-radius: 2px;
-        }
-
-        .section-subtitle {
-            color: var(--text-light);
-            font-size: 1.1rem;
-            max-width: 600px;
-            margin: 1.5rem auto 0;
-        }
-
-        /* About Section */
-        .about-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: center;
-        }
-
-        .about-text p {
-            margin-bottom: 1.2rem;
-            font-size: 1.05rem;
-            color: var(--text-dark);
-        }
-
-        .about-text p:last-child {
-            margin-bottom: 0;
-        }
-
-        .about-image-placeholder {
-            width: 100%;
-            aspect-ratio: 4/5;
-            background: var(--gradient);
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 3rem;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
-        }
-
-        /* Experience Section */
-        .experience-grid {
-            display: grid;
-            gap: 2rem;
-        }
-
-        .experience-item {
-            background: white;
-            padding: 2rem;
-            border-radius: 12px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-            border-left: 4px solid var(--accent);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .experience-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
-        }
-
-        .experience-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            margin-bottom: 1rem;
-            flex-wrap: wrap;
-            gap: 1rem;
-        }
-
-        .experience-title {
-            flex: 1;
-        }
-
-        .experience-title h3 {
-            font-family: 'Crimson Pro', serif;
-            font-size: 1.5rem;
-            color: var(--primary);
-            margin-bottom: 0.3rem;
-        }
-
-        .company {
-            color: var(--accent);
-            font-weight: 600;
-            font-size: 1.05rem;
-        }
-
-        .date {
-            color: var(--text-light);
-            font-size: 0.95rem;
-            white-space: nowrap;
-        }
-
-        .experience-item ul {
-            list-style: none;
-            padding-left: 0;
-        }
-
-        .experience-item li {
-            padding-left: 1.5rem;
-            margin-bottom: 0.7rem;
-            position: relative;
-            color: var(--text-dark);
-        }
-
-        .experience-item li::before {
-            content: '▹';
-            position: absolute;
-            left: 0;
-            color: var(--accent);
-            font-weight: bold;
-        }
-
-        /* Publications Section */
-        .publications-grid {
-            display: grid;
-            gap: 2rem;
-        }
-
-        .publication-item {
-            background: white;
-            padding: 2rem;
-            border-radius: 12px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .publication-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
-        }
-
-        .publication-item h3 {
-            font-family: 'Crimson Pro', serif;
-            font-size: 1.3rem;
-            color: var(--primary);
-            margin-bottom: 0.8rem;
-            line-height: 1.4;
-        }
-
-        .authors {
-            color: var(--text-light);
-            font-size: 0.95rem;
-            margin-bottom: 0.5rem;
-            font-style: italic;
-        }
-
-        .publication-type {
-            display: inline-block;
-            padding: 0.3rem 0.8rem;
-            background: rgba(233, 69, 96, 0.1);
-            color: var(--accent);
-            border-radius: 20px;
-            font-size: 0.85rem;
-            font-weight: 600;
-            margin-top: 0.5rem;
-        }
-
-        /* Presentations Section */
-        .presentations-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-
-        .presentation-card {
-            background: white;
-            padding: 2rem;
-            border-radius: 12px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .presentation-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
-        }
-
-        .presentation-card h3 {
-            font-family: 'Crimson Pro', serif;
-            font-size: 1.2rem;
-            color: var(--primary);
-            margin-bottom: 1rem;
-            line-height: 1.4;
-        }
-
-        .presentation-details {
-            color: var(--text-light);
-            font-size: 0.95rem;
-        }
-
-        .presentation-details p {
-            margin-bottom: 0.5rem;
-        }
-
-        /* Skills Section */
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-        }
-
-        .skill-category {
-            background: white;
-            padding: 2rem;
-            border-radius: 12px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-        }
-
-        .skill-category h3 {
-            font-family: 'Crimson Pro', serif;
-            font-size: 1.3rem;
-            color: var(--primary);
-            margin-bottom: 1.2rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .skill-category h3::before {
-            content: '';
-            width: 4px;
-            height: 24px;
-            background: var(--accent);
-            border-radius: 2px;
-        }
-
-        .skills-list {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.8rem;
-        }
-
-        .skill-tag {
-            padding: 0.5rem 1rem;
-            background: rgba(102, 126, 234, 0.1);
-            color: var(--secondary);
-            border-radius: 20px;
-            font-size: 0.9rem;
-            font-weight: 500;
-        }
-
-        /* Contact Section */
-        #contact {
-            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
-            color: white;
-        }
-
-        #contact .section-title {
-            color: white;
-        }
-
-        #contact .section-title::after {
-            background: var(--accent);
-        }
-
-        #contact .section-subtitle {
-            color: rgba(255, 255, 255, 0.8);
-        }
-
-        .contact-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        .contact-card {
-            background: rgba(255, 255, 255, 0.05);
-            padding: 2rem;
-            border-radius: 12px;
-            text-align: center;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            transition: all 0.3s ease;
-        }
-
-        .contact-card:hover {
-            background: rgba(255, 255, 255, 0.1);
-            transform: translateY(-5px);
-        }
-
-        .contact-icon {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .contact-card h3 {
-            font-size: 1.2rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .contact-card a {
-            color: rgba(255, 255, 255, 0.9);
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-
-        .contact-card a:hover {
-            color: var(--accent);
-        }
-
-        /* Footer */
-        footer {
-            background: var(--primary);
-            color: rgba(255, 255, 255, 0.7);
-            text-align: center;
-            padding: 2rem;
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .about-content {
-                grid-template-columns: 1fr;
-            }
-
-            .experience-header {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-
-            .presentations-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .skills-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .contact-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nimotallahi Azeez | Technical Communication</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet" />
+  <style>
+    /* ═══════════════════════════════════════
+       ROOT & RESET
+    ═══════════════════════════════════════ */
+    :root {
+      --ink:      #1a1208;
+      --ink-mid:  #3d3020;
+      --gold:     #c9a84c;
+      --gold-lt:  #e8d5a3;
+      --cream:    #f7f3ec;
+      --cream-dk: #ede7d9;
+      --rust:     #b04a2f;
+      --teal:     #2a6b6e;
+      --white:    #fdfaf5;
+      --shadow:   rgba(26,18,8,0.12);
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--cream);
+      color: var(--ink);
+      overflow-x: hidden;
+      line-height: 1.7;
+    }
+    img { max-width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
+
+    /* ═══════════════════════════════════════
+       NAV
+    ═══════════════════════════════════════ */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.1rem 3rem;
+      background: rgba(247,243,236,0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--gold-lt);
+      transition: box-shadow 0.3s;
+    }
+    nav.scrolled { box-shadow: 0 4px 24px var(--shadow); }
+    .nav-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.3rem;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      color: var(--ink);
+    }
+    .nav-logo span { color: var(--gold); }
+    .nav-links {
+      display: flex;
+      gap: 2.2rem;
+      list-style: none;
+    }
+    .nav-links a {
+      font-size: 0.88rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--ink-mid);
+      transition: color 0.2s;
+      position: relative;
+    }
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -3px; left: 0;
+      width: 0; height: 2px;
+      background: var(--gold);
+      transition: width 0.3s;
+    }
+    .nav-links a:hover { color: var(--ink); }
+    .nav-links a:hover::after { width: 100%; }
+    .nav-toggle {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      background: none;
+      border: none;
+      padding: 4px;
+    }
+    .nav-toggle span {
+      display: block;
+      width: 24px; height: 2px;
+      background: var(--ink);
+      border-radius: 2px;
+      transition: all 0.3s;
+    }
+
+    /* ═══════════════════════════════════════
+       HERO
+    ═══════════════════════════════════════ */
+    .hero {
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      background: var(--ink);
+      position: relative;
+      overflow: hidden;
+      padding-top: 80px;
+    }
+    /* decorative lines */
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        repeating-linear-gradient(
+          0deg,
+          transparent,
+          transparent 59px,
+          rgba(201,168,76,0.07) 59px,
+          rgba(201,168,76,0.07) 60px
+        );
+      pointer-events: none;
+    }
+    .hero-left {
+      padding: 5rem 4rem 5rem 6rem;
+      position: relative;
+      z-index: 2;
+    }
+    .hero-eyebrow {
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1.8rem;
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+    }
+    .hero-eyebrow::before {
+      content: '';
+      width: 40px; height: 1px;
+      background: var(--gold);
+    }
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(3rem, 5vw, 5rem);
+      line-height: 1.08;
+      font-weight: 900;
+      color: var(--white);
+      margin-bottom: 1.5rem;
+    }
+    .hero h1 em {
+      font-style: italic;
+      color: var(--gold);
+    }
+    .hero-desc {
+      font-size: 1.05rem;
+      color: rgba(253,250,245,0.7);
+      max-width: 440px;
+      line-height: 1.8;
+      margin-bottom: 2.8rem;
+    }
+    .hero-actions {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.85rem 2rem;
+      border-radius: 4px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      cursor: pointer;
+      border: none;
+      transition: all 0.25s;
+    }
+    .btn-gold {
+      background: var(--gold);
+      color: var(--ink);
+    }
+    .btn-gold:hover { background: var(--gold-lt); transform: translateY(-2px); }
+    .btn-outline {
+      background: transparent;
+      color: var(--white);
+      border: 1.5px solid rgba(253,250,245,0.35);
+    }
+    .btn-outline:hover { border-color: var(--gold); color: var(--gold); }
+    .hero-stats {
+      display: flex;
+      gap: 2.5rem;
+      margin-top: 3.5rem;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(253,250,245,0.1);
+    }
+    .stat-item { }
+    .stat-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      font-weight: 900;
+      color: var(--gold);
+      line-height: 1;
+    }
+    .stat-label {
+      font-size: 0.78rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(253,250,245,0.55);
+      margin-top: 0.3rem;
+    }
+    .hero-right {
+      position: relative;
+      height: 100%;
+      min-height: 100vh;
+      overflow: hidden;
+    }
+    /* big decorative letter */
+    .hero-deco-letter {
+      position: absolute;
+      bottom: -0.15em;
+      right: -0.05em;
+      font-family: 'Playfair Display', serif;
+      font-size: 38vmin;
+      font-weight: 900;
+      font-style: italic;
+      color: rgba(201,168,76,0.06);
+      line-height: 1;
+      pointer-events: none;
+      user-select: none;
+    }
+    .hero-photo-frame {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .hero-photo {
+      width: 72%;
+      max-width: 380px;
+      aspect-ratio: 3/4;
+      border-radius: 4px;
+      overflow: hidden;
+      border: 3px solid var(--gold);
+      box-shadow: 0 30px 80px rgba(0,0,0,0.5);
+      position: relative;
+    }
+    .hero-photo img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+    }
+    .hero-photo-placeholder {
+      width: 100%; height: 100%;
+      background: linear-gradient(160deg, #2a2010 0%, #3d3020 60%, #1a1208 100%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+    }
+    .hero-photo-placeholder .initials {
+      font-family: 'Playfair Display', serif;
+      font-size: 5rem;
+      font-weight: 900;
+      color: var(--gold);
+      line-height: 1;
+    }
+    .hero-photo-placeholder .hint {
+      font-size: 0.75rem;
+      color: rgba(201,168,76,0.5);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+    .hero-photo-tag {
+      position: absolute;
+      bottom: -1px;
+      left: -40px;
+      background: var(--gold);
+      color: var(--ink);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 0.5rem 1rem;
+      white-space: nowrap;
+    }
+
+    /* ═══════════════════════════════════════
+       SECTION COMMONS
+    ═══════════════════════════════════════ */
+    section { padding: 6rem 0; }
+    .container { max-width: 1180px; margin: 0 auto; padding: 0 2rem; }
+    .section-label {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gold);
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
+      margin-bottom: 0.8rem;
+    }
+    .section-label::before {
+      content: '';
+      width: 30px; height: 1px;
+      background: var(--gold);
+    }
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 3.5vw, 2.9rem);
+      font-weight: 900;
+      color: var(--ink);
+      line-height: 1.15;
+      margin-bottom: 1rem;
+    }
+    .section-sub {
+      color: var(--ink-mid);
+      opacity: 0.7;
+      max-width: 560px;
+      font-size: 1.02rem;
+    }
+    .section-head { margin-bottom: 3.5rem; }
+
+    /* reveal on scroll */
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    /* ═══════════════════════════════════════
+       ABOUT
+    ═══════════════════════════════════════ */
+    #about { background: var(--white); }
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 5rem;
+      align-items: start;
+    }
+    .about-image-wrap {
+      position: relative;
+    }
+    .about-photo {
+      width: 100%;
+      aspect-ratio: 4/5;
+      border-radius: 4px;
+      overflow: hidden;
+      box-shadow: 0 20px 60px var(--shadow);
+    }
+    .about-photo img { width: 100%; height: 100%; object-fit: cover; }
+    .about-photo-placeholder {
+      width: 100%; height: 100%;
+      background: linear-gradient(160deg, var(--cream-dk), var(--cream));
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Playfair Display', serif;
+      font-size: 4rem; font-weight: 900; color: var(--gold-lt);
+    }
+    .about-deco-box {
+      position: absolute;
+      bottom: -20px; left: -20px;
+      width: 120px; height: 120px;
+      border: 3px solid var(--gold);
+      border-radius: 4px;
+      z-index: -1;
+    }
+    .about-text p {
+      margin-bottom: 1.2rem;
+      font-size: 1.04rem;
+      color: var(--ink-mid);
+      line-height: 1.85;
+    }
+    .about-meta {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.2rem;
+      margin-top: 2.5rem;
+    }
+    .about-meta-item {
+      padding: 1rem 1.2rem;
+      background: var(--cream);
+      border-radius: 4px;
+      border-left: 3px solid var(--gold);
+    }
+    .about-meta-label {
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold);
+      font-weight: 700;
+      margin-bottom: 0.3rem;
+    }
+    .about-meta-value {
+      font-size: 0.92rem;
+      font-weight: 500;
+      color: var(--ink);
+    }
+
+    /* ═══════════════════════════════════════
+       EXPERIENCE
+    ═══════════════════════════════════════ */
+    #experience { background: var(--cream); }
+    .timeline { position: relative; padding-left: 2.5rem; }
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 0; top: 0; bottom: 0;
+      width: 2px;
+      background: linear-gradient(to bottom, var(--gold), transparent);
+    }
+    .timeline-item {
+      position: relative;
+      margin-bottom: 3rem;
+      background: var(--white);
+      border-radius: 8px;
+      padding: 2rem 2.2rem;
+      box-shadow: 0 4px 24px var(--shadow);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .timeline-item:hover {
+      transform: translateX(4px);
+      box-shadow: 0 8px 36px var(--shadow);
+    }
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: -2.97rem; top: 2rem;
+      width: 14px; height: 14px;
+      border-radius: 50%;
+      background: var(--gold);
+      border: 3px solid var(--cream);
+      box-shadow: 0 0 0 2px var(--gold);
+    }
+    .exp-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 1rem;
+    }
+    .exp-role {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--ink);
+      margin-bottom: 0.2rem;
+    }
+    .exp-company { color: var(--rust); font-weight: 600; font-size: 0.95rem; }
+    .exp-date {
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      color: var(--ink-mid);
+      opacity: 0.55;
+      white-space: nowrap;
+      margin-top: 0.2rem;
+    }
+    .exp-list { list-style: none; }
+    .exp-list li {
+      font-size: 0.96rem;
+      color: var(--ink-mid);
+      padding: 0.3rem 0 0.3rem 1.4rem;
+      position: relative;
+      line-height: 1.6;
+    }
+    .exp-list li::before {
+      content: '—';
+      position: absolute; left: 0;
+      color: var(--gold);
+      font-weight: 700;
+    }
+
+    /* ═══════════════════════════════════════
+       RESEARCH / PUBLICATIONS
+    ═══════════════════════════════════════ */
+    #research { background: var(--ink); }
+    #research .section-title { color: var(--white); }
+    #research .section-sub { color: rgba(253,250,245,0.6); }
+    #research .section-label { }
+    .research-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 2rem;
+    }
+    .research-card {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(201,168,76,0.2);
+      border-radius: 8px;
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      transition: border-color 0.3s, background 0.3s, transform 0.3s;
+    }
+    .research-card:hover {
+      border-color: var(--gold);
+      background: rgba(201,168,76,0.06);
+      transform: translateY(-4px);
+    }
+    .research-type-tag {
+      display: inline-block;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      padding: 0.3rem 0.8rem;
+      border-radius: 2px;
+      margin-bottom: 1.2rem;
+      align-self: flex-start;
+    }
+    .tag-chapter { background: rgba(176,74,47,0.2); color: #e8926e; }
+    .tag-journal { background: rgba(42,107,110,0.25); color: #6ec9cc; }
+    .tag-conference { background: rgba(201,168,76,0.2); color: var(--gold); }
+    .research-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--white);
+      line-height: 1.4;
+      margin-bottom: 0.8rem;
+      flex-grow: 1;
+    }
+    .research-authors {
+      font-size: 0.85rem;
+      color: rgba(253,250,245,0.5);
+      font-style: italic;
+      margin-bottom: 0.7rem;
+      line-height: 1.5;
+    }
+    .research-venue {
+      font-size: 0.88rem;
+      color: rgba(253,250,245,0.65);
+      margin-bottom: 1.5rem;
+    }
+    .research-actions {
+      display: flex;
+      gap: 0.8rem;
+      flex-wrap: wrap;
+      margin-top: auto;
+    }
+    .btn-sm {
+      font-size: 0.8rem;
+      padding: 0.55rem 1.1rem;
+      border-radius: 3px;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      transition: all 0.2s;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      cursor: pointer;
+      border: none;
+    }
+    .btn-gold-sm { background: var(--gold); color: var(--ink); }
+    .btn-gold-sm:hover { background: var(--gold-lt); }
+    .btn-ghost-sm {
+      background: transparent;
+      color: rgba(253,250,245,0.7);
+      border: 1px solid rgba(253,250,245,0.2);
+    }
+    .btn-ghost-sm:hover { border-color: var(--gold); color: var(--gold); }
+
+    /* PDF upload note */
+    .research-upload-note {
+      margin-top: 2.5rem;
+      padding: 1.5rem 2rem;
+      border: 1px dashed rgba(201,168,76,0.35);
+      border-radius: 6px;
+      text-align: center;
+      color: rgba(253,250,245,0.45);
+      font-size: 0.88rem;
+    }
+    .research-upload-note strong { color: var(--gold); }
+
+    /* ═══════════════════════════════════════
+       PRESENTATIONS
+    ═══════════════════════════════════════ */
+    #presentations { background: var(--cream-dk); }
+    .pres-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+    .pres-card {
+      background: var(--white);
+      border-radius: 8px;
+      padding: 2rem;
+      border-top: 4px solid var(--teal);
+      box-shadow: 0 4px 20px var(--shadow);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .pres-card:hover { transform: translateY(-6px); box-shadow: 0 12px 36px var(--shadow); }
+    .pres-icon { font-size: 2rem; margin-bottom: 1rem; }
+    .pres-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--ink);
+      line-height: 1.4;
+      margin-bottom: 1.2rem;
+    }
+    .pres-meta { display: flex; flex-direction: column; gap: 0.5rem; }
+    .pres-meta-row {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-size: 0.88rem;
+      color: var(--ink-mid);
+      opacity: 0.75;
+    }
+    .pres-meta-row .label {
+      font-weight: 700;
+      color: var(--teal);
+      font-size: 0.75rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      min-width: 80px;
+    }
+
+    /* ═══════════════════════════════════════
+       GALLERY
+    ═══════════════════════════════════════ */
+    #gallery { background: var(--white); }
+    .gallery-intro { margin-bottom: 3rem; }
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      grid-auto-rows: 200px;
+      gap: 1rem;
+    }
+    .gallery-item {
+      border-radius: 6px;
+      overflow: hidden;
+      position: relative;
+      background: var(--cream-dk);
+      cursor: pointer;
+    }
+    .gallery-item:nth-child(1) { grid-column: span 7; grid-row: span 2; }
+    .gallery-item:nth-child(2) { grid-column: span 5; }
+    .gallery-item:nth-child(3) { grid-column: span 5; }
+    .gallery-item:nth-child(4) { grid-column: span 4; }
+    .gallery-item:nth-child(5) { grid-column: span 4; }
+    .gallery-item:nth-child(6) { grid-column: span 4; }
+    .gallery-item img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+    .gallery-item:hover img { transform: scale(1.06); }
+    .gallery-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(to top, rgba(26,18,8,0.85) 0%, transparent 60%);
+      opacity: 0;
+      transition: opacity 0.3s;
+      display: flex;
+      align-items: flex-end;
+      padding: 1.5rem;
+    }
+    .gallery-item:hover .gallery-overlay { opacity: 1; }
+    .gallery-caption {
+      font-size: 0.88rem;
+      color: var(--white);
+      font-weight: 500;
+      line-height: 1.4;
+    }
+    /* placeholder gallery items */
+    .gallery-placeholder {
+      width: 100%; height: 100%;
+      display: flex; align-items: center; justify-content: center;
+      flex-direction: column; gap: 0.5rem;
+      color: var(--gold-lt);
+      font-size: 0.8rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+    .gallery-placeholder-icon { font-size: 2rem; opacity: 0.4; }
+    .gallery-upload-note {
+      margin-top: 2rem;
+      padding: 1.2rem 1.8rem;
+      border: 1px dashed var(--gold-lt);
+      border-radius: 6px;
+      text-align: center;
+      color: var(--ink-mid);
+      opacity: 0.6;
+      font-size: 0.88rem;
+    }
+
+    /* ═══════════════════════════════════════
+       SKILLS
+    ═══════════════════════════════════════ */
+    #skills { background: var(--cream); }
+    .skills-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 2rem;
+    }
+    .skill-block {
+      background: var(--white);
+      border-radius: 8px;
+      padding: 2rem;
+      box-shadow: 0 4px 20px var(--shadow);
+    }
+    .skill-block-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--ink);
+      margin-bottom: 0.4rem;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+    .skill-block-title .icon { font-size: 1.2rem; }
+    .skill-block-sub {
+      font-size: 0.8rem;
+      color: var(--ink-mid);
+      opacity: 0.55;
+      margin-bottom: 1.4rem;
+      letter-spacing: 0.04em;
+    }
+    .skill-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+    }
+    .skill-tag {
+      padding: 0.4rem 0.9rem;
+      font-size: 0.83rem;
+      font-weight: 500;
+      border-radius: 2px;
+      background: var(--cream-dk);
+      color: var(--ink-mid);
+      transition: background 0.2s, color 0.2s;
+    }
+    .skill-tag:hover { background: var(--gold-lt); color: var(--ink); }
+    .certs-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-top: 3rem;
+    }
+    .cert-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      padding: 0.7rem 1.4rem;
+      background: var(--white);
+      border: 1.5px solid var(--gold-lt);
+      border-radius: 4px;
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--ink);
+      box-shadow: 0 2px 10px var(--shadow);
+    }
+    .cert-badge .cert-icon { font-size: 1.1rem; }
+
+    /* ═══════════════════════════════════════
+       CONTACT
+    ═══════════════════════════════════════ */
+    #contact { background: var(--ink); }
+    #contact .section-title { color: var(--white); }
+    #contact .section-sub { color: rgba(253,250,245,0.6); }
+    .contact-layout {
+      display: grid;
+      grid-template-columns: 1fr 1.4fr;
+      gap: 5rem;
+      align-items: start;
+    }
+    .contact-info-block { }
+    .contact-detail {
+      display: flex;
+      align-items: flex-start;
+      gap: 1.2rem;
+      margin-bottom: 2rem;
+    }
+    .contact-icon-wrap {
+      width: 46px; height: 46px;
+      border-radius: 4px;
+      background: rgba(201,168,76,0.12);
+      border: 1px solid rgba(201,168,76,0.25);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.3rem;
+      flex-shrink: 0;
+    }
+    .contact-detail-label {
+      font-size: 0.72rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--gold);
+      font-weight: 700;
+      margin-bottom: 0.3rem;
+    }
+    .contact-detail-value {
+      font-size: 0.98rem;
+      color: rgba(253,250,245,0.85);
+    }
+    .contact-detail-value a { transition: color 0.2s; }
+    .contact-detail-value a:hover { color: var(--gold); }
+    .social-links {
+      display: flex;
+      gap: 1rem;
+      margin-top: 2.5rem;
+    }
+    .social-link {
+      width: 44px; height: 44px;
+      border-radius: 4px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.12);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.2rem;
+      transition: all 0.25s;
+      text-decoration: none;
+    }
+    .social-link:hover { background: rgba(201,168,76,0.15); border-color: var(--gold); }
+    /* contact form */
+    .contact-form { }
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+    .form-group { margin-bottom: 1.2rem; }
+    .form-label {
+      display: block;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(253,250,245,0.55);
+      margin-bottom: 0.5rem;
+    }
+    .form-input,
+    .form-textarea {
+      width: 100%;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 4px;
+      padding: 0.85rem 1.1rem;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.95rem;
+      color: var(--white);
+      outline: none;
+      transition: border-color 0.2s, background 0.2s;
+    }
+    .form-input::placeholder, .form-textarea::placeholder {
+      color: rgba(253,250,245,0.3);
+    }
+    .form-input:focus, .form-textarea:focus {
+      border-color: var(--gold);
+      background: rgba(201,168,76,0.07);
+    }
+    .form-textarea { resize: vertical; min-height: 130px; }
+    .form-submit {
+      width: 100%;
+      padding: 1rem;
+      background: var(--gold);
+      color: var(--ink);
+      font-size: 0.92rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background 0.25s, transform 0.2s;
+      margin-top: 0.5rem;
+    }
+    .form-submit:hover { background: var(--gold-lt); transform: translateY(-2px); }
+
+    /* ═══════════════════════════════════════
+       FOOTER
+    ═══════════════════════════════════════ */
+    footer {
+      background: #110d05;
+      padding: 2rem;
+      text-align: center;
+      border-top: 1px solid rgba(201,168,76,0.12);
+    }
+    footer p {
+      font-size: 0.83rem;
+      color: rgba(253,250,245,0.3);
+    }
+    footer strong { color: var(--gold); font-weight: 500; }
+
+    /* ═══════════════════════════════════════
+       RESPONSIVE
+    ═══════════════════════════════════════ */
+    @media (max-width: 1024px) {
+      .hero { grid-template-columns: 1fr; min-height: auto; }
+      .hero-left { padding: 7rem 2.5rem 3rem; text-align: center; }
+      .hero-eyebrow { justify-content: center; }
+      .hero-desc { margin: 0 auto 2.5rem; }
+      .hero-actions { justify-content: center; }
+      .hero-stats { justify-content: center; }
+      .hero-right { min-height: 60vw; display: none; }
+      .about-grid { grid-template-columns: 1fr; gap: 3rem; }
+      .skills-layout { grid-template-columns: 1fr 1fr; }
+      .contact-layout { grid-template-columns: 1fr; gap: 3rem; }
+    }
+    @media (max-width: 768px) {
+      nav { padding: 1rem 1.5rem; }
+      .nav-links { display: none; flex-direction: column; position: absolute; top: 100%; left: 0; right: 0; background: var(--cream); padding: 1.5rem; border-bottom: 1px solid var(--gold-lt); box-shadow: 0 8px 24px var(--shadow); }
+      .nav-links.open { display: flex; }
+      .nav-toggle { display: flex; }
+      .hero-left { padding: 6rem 1.5rem 3rem; }
+      .hero-stats { flex-wrap: wrap; gap: 1.5rem; }
+      section { padding: 4rem 0; }
+      .timeline { padding-left: 1.5rem; }
+      .gallery-grid { grid-template-columns: 1fr 1fr; grid-auto-rows: 160px; }
+      .gallery-item:nth-child(n) { grid-column: span 1 !important; grid-row: span 1 !important; }
+      .gallery-item:nth-child(1) { grid-column: span 2 !important; }
+      .skills-layout { grid-template-columns: 1fr; }
+      .form-row { grid-template-columns: 1fr; }
+      .about-meta { grid-template-columns: 1fr; }
+    }
+  </style>
 </head>
 <body>
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-content">
-            <!-- Replace this div with an actual image -->
-            <div class="profile-image-placeholder">NA</div>
-            <!-- To add your photo: Replace the div above with:
-                 <img src="your-photo.jpg" alt="Nimotallahi Azeez" class="profile-image-placeholder" style="object-fit: cover;"> -->
-            
-            <h1>Nimotallahi Azeez</h1>
-            <p class="subtitle">Technical Communication Specialist</p>
-            <p class="tagline">M.A. Candidate in Professional Technical Communication | Content Developer | Educator passionate about creating clear, accessible, and impactful communication</p>
-            <div class="cta-buttons">
-                <a href="#contact" class="btn btn-primary">Get In Touch</a>
-                <a href="#experience" class="btn btn-secondary">View My Work</a>
-            </div>
+
+  <!-- ═══ NAV ═══ -->
+  <nav id="navbar">
+    <div class="nav-logo">N<span>.</span>Azeez</div>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#about">About</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#research">Research</a></li>
+      <li><a href="#presentations">Presentations</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- ═══ HERO ═══ -->
+  <section class="hero" id="home">
+    <div class="hero-left">
+      <div class="hero-eyebrow">Masters Portfolio &mdash; Technical Communication</div>
+      <h1>Nimotallahi<br/><em>Azeez</em></h1>
+      <p class="hero-desc">
+        M.A. Candidate in Professional Technical Communication at Tennessee Tech &mdash; 
+        shaping language, technology, and human understanding into clear, accessible, and 
+        purposeful communication.
+      </p>
+      <div class="hero-actions">
+        <a href="#research" class="btn btn-gold">View Research ↓</a>
+        <a href="#contact" class="btn btn-outline">Get In Touch</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat-item">
+          <div class="stat-num">2</div>
+          <div class="stat-label">Publications</div>
         </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">About Me</h2>
-            </div>
-            <div class="about-content">
-                <div class="about-text">
-                    <p>I am a dedicated technical communication professional currently pursuing my M.A. in English (Professional Technical Communication) at Tennessee Technological University, with an expected graduation in August 2026.</p>
-                    
-                    <p>My expertise spans content development, educational programming, and customer-centric communication. I have a proven track record of designing clear, accessible documentation and creating engaging educational content that fosters leadership development and community engagement.</p>
-                    
-                    <p>With experience in teaching, content creation, and public information development, I bring a unique perspective to technical communication—one that prioritizes clarity, user experience, and meaningful engagement. I am passionate about leveraging communication strategies to solve complex problems and enhance user understanding.</p>
-                    
-                    <p>I am actively involved in the technical communication community through conference presentations, research publications, and continuous professional development.</p>
-                </div>
-                <div class="about-image-placeholder">
-                    <!-- Replace with actual photo -->
-                    <img src="about-photo.jpg" alt="Nimotallahi Azeez" style="width: 100%; aspect-ratio: 4/5; object-fit: cover; border-radius: 12px; box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);">
-                </div>
-                <!-- To add your photo: Replace the div above with:
-                      -->
-            </div>
+        <div class="stat-item">
+          <div class="stat-num">2</div>
+          <div class="stat-label">Conference Talks</div>
         </div>
-    </section>
-
-    <!-- Experience Section -->
-    <section id="experience">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Experience</h2>
-                <p class="section-subtitle">My professional journey in technical communication, education, and content development</p>
-            </div>
-            <div class="experience-grid">
-                <div class="experience-item">
-                    <div class="experience-header">
-                        <div class="experience-title">
-                            <h3>Program Development and Community Engagement Associate</h3>
-                            <p class="company">Office of Intercultural Affairs, Tennessee Technological University</p>
-                        </div>
-                        <span class="date">Fall 2025</span>
-                    </div>
-                    <ul>
-                        <li>Designed and implemented leadership development programming focused on communication, mentorship, and community engagement</li>
-                        <li>Created weekly educational content for mentors and mentees to develop communication skills and support leadership growth</li>
-                        <li>Assessed participant engagement and feedback to continuously adapt program activities, ensuring relevance and effectiveness</li>
-                    </ul>
-                </div>
-
-                <div class="experience-item">
-                    <div class="experience-header">
-                        <div class="experience-title">
-                            <h3>Graduate Teaching Assistant</h3>
-                            <p class="company">Tennessee Technological University</p>
-                        </div>
-                        <span class="date">August 2024 - Present</span>
-                    </div>
-                    <ul>
-                        <li>Design and deliver course content, including lectures, discussions, and writing assignments</li>
-                        <li>Facilitate class engagement through interactive activities, collaborative exercises, and reflective discussions</li>
-                        <li>Provide constructive feedback on student drafts, focusing on clarity, coherence, and grammar</li>
-                        <li>Maintain organized tracking of student progress, documentation, and follow-up communications</li>
-                        <li>Offer one-on-one support to students, helping them develop ideas and refine arguments</li>
-                    </ul>
-                </div>
-
-                <div class="experience-item">
-                    <div class="experience-header">
-                        <div class="experience-title">
-                            <h3>Customer Support Representative</h3>
-                            <p class="company">Field Nation</p>
-                        </div>
-                        <span class="date">August 2023 - August 2024</span>
-                    </div>
-                    <ul>
-                        <li>Handled incoming customer calls and service requests, resolving issues or forwarding to appropriate teams</li>
-                        <li>Maintained accurate records of all customer interactions using CRM tools</li>
-                        <li>Assisted in collecting and organizing customer feedback to improve support materials and service quality</li>
-                        <li>Supported team coordination through clear cross-departmental communication</li>
-                    </ul>
-                </div>
-
-                <div class="experience-item">
-                    <div class="experience-header">
-                        <div class="experience-title">
-                            <h3>Information Developer</h3>
-                            <p class="company">Ministry of Information and Strategy, Nigeria</p>
-                        </div>
-                        <span class="date">July 2022 - July 2023</span>
-                    </div>
-                    <ul>
-                        <li>Created and revised official communications including press releases, briefing notes, and public service announcements</li>
-                        <li>Ensured clarity, accuracy, and consistency in line with ministry guidelines</li>
-                        <li>Proofread and edited all communications to meet government style guides, achieving 95% error-free published materials</li>
-                        <li>Contributed to public information campaigns and awareness initiatives, including developing visual aids</li>
-                    </ul>
-                </div>
-            </div>
+        <div class="stat-item">
+          <div class="stat-num">3+</div>
+          <div class="stat-label">Years Experience</div>
         </div>
-    </section>
-
-    <!-- Publications Section -->
-    <section id="publications">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Publications</h2>
-                <p class="section-subtitle">My contributions to academic research and professional literature</p>
-            </div>
-            <div class="publications-grid">
-                <div class="publication-item">
-                    <h3>Beyond refusal: "Co-intelligence" and "Coded Gaze" as AI pedagogies</h3>
-                    <p class="authors">Ramler, M., Askins, S., Azeez, N., Barnes, K., Begum, A., Grubbs, N. G.</p>
-                    <p style="color: var(--text-dark); margin-top: 0.8rem;">In: AI in Technical Communication: Emerging Technologies and Pedagogies. Routledge.</p>
-                    <span class="publication-type">Book Chapter (Forthcoming)</span>
-                </div>
-
-                <div class="publication-item">
-                    <h3>Artificial intelligence governance: Legal and public policy implications for data privacy and algorithmic accountability</h3>
-                    <p class="authors">Ighofiomoni, M. O., Awoyomi, O. O., Popoola, R., Ahaiwe, E. C., Chinonyerem, C. A., Azeez, N. A.</p>
-                    <p style="color: var(--text-dark); margin-top: 0.8rem;">International Journal of Humanities, Literature and Art Research, 10(6). (2025)</p>
-                    <a href="https://doi.org/10.70382/mejhlar.v10i6.078" target="_blank" style="color: var(--accent); text-decoration: none; font-weight: 600; display: inline-block; margin-top: 0.5rem;">View Publication →</a>
-                    <span class="publication-type">Journal Article</span>
-                </div>
-            </div>
+      </div>
+    </div>
+    <div class="hero-right">
+      <div class="hero-deco-letter">N</div>
+      <div class="hero-photo-frame">
+        <div class="hero-photo">
+          <!-- REPLACE THIS BLOCK WITH: <img src="your-photo.jpg" alt="Nimotallahi Azeez" /> -->
+          <div class="hero-photo-placeholder">
+            <span class="initials">NA</span>
+            <span class="hint">Add your photo</span>
+          </div>
+          <!-- END REPLACE -->
+          <div class="hero-photo-tag">Technical Communicator</div>
         </div>
-    </section>
+      </div>
+    </div>
+  </section>
 
-    <!-- Presentations Section -->
-    <section id="presentations" style="background: var(--light);">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Conference Presentations</h2>
-                <p class="section-subtitle">Sharing insights on accessible technology and AI in communication</p>
-            </div>
-            <div class="presentations-grid">
-                <div class="presentation-card">
-                    <h3>"The Need to Design Accessible Technology Tools for Childhood Education"</h3>
-                    <div class="presentation-details">
-                        <p><strong>Conference:</strong> Appalachian Conference</p>
-                        <p><strong>Location:</strong> Cookeville, TN</p>
-                        <p><strong>Date:</strong> March 21, 2025</p>
-                    </div>
-                </div>
-
-                <div class="presentation-card">
-                    <h3>"ChatGPT 5 and Me: Writing in the Age of Automation"</h3>
-                    <div class="presentation-details">
-                        <p><strong>Conference:</strong> National High School Journalism Convention</p>
-                        <p><strong>Location:</strong> Nashville, TN</p>
-                        <p><strong>Date:</strong> November 14, 2025</p>
-                    </div>
-                </div>
-            </div>
+  <!-- ═══ ABOUT ═══ -->
+  <section id="about">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-image-wrap reveal">
+          <div class="about-photo">
+            <!-- REPLACE with: <img src="about-photo.jpg" alt="Nimotallahi Azeez" /> -->
+            <div class="about-photo-placeholder">NA</div>
+          </div>
+          <div class="about-deco-box"></div>
         </div>
-    </section>
-
-    <!-- Skills Section -->
-    <section id="skills">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Skills & Expertise</h2>
-                <p class="section-subtitle">Technical and professional competencies</p>
+        <div class="reveal">
+          <div class="section-label">Who I Am</div>
+          <h2 class="section-title">About Me</h2>
+          <p style="margin-bottom:1.2rem; font-size:1.04rem; color:var(--ink-mid); line-height:1.85;">
+            I am a dedicated technical communication professional currently pursuing my M.A. in English 
+            (Professional Technical Communication) at Tennessee Technological University, 
+            with an expected graduation in August 2026.
+          </p>
+          <p style="margin-bottom:1.2rem; font-size:1.04rem; color:var(--ink-mid); line-height:1.85;">
+            My expertise spans content development, educational programming, and customer-centric communication. 
+            I have a proven track record of designing clear, accessible documentation and creating engaging 
+            educational content that fosters leadership development and community engagement.
+          </p>
+          <p style="font-size:1.04rem; color:var(--ink-mid); line-height:1.85;">
+            With experience in teaching, content creation, and public information development, 
+            I bring a unique perspective to technical communication — one that prioritizes clarity, 
+            user experience, and meaningful engagement.
+          </p>
+          <div class="about-meta">
+            <div class="about-meta-item">
+              <div class="about-meta-label">Degree</div>
+              <div class="about-meta-value">M.A. Professional Technical Communication</div>
             </div>
-            <div class="skills-grid">
-                <div class="skill-category">
-                    <h3>Communication</h3>
-                    <div class="skills-list">
-                        <span class="skill-tag">Technical Writing</span>
-                        <span class="skill-tag">Content Development</span>
-                        <span class="skill-tag">Public Speaking</span>
-                        <span class="skill-tag">Educational Content</span>
-                    </div>
-                </div>
-
-                <div class="skill-category">
-                    <h3>Tools & Software</h3>
-                    <div class="skills-list">
-                        <span class="skill-tag">MadCap Flare</span>
-                        <span class="skill-tag">SharePoint</span>
-                        <span class="skill-tag">Confluence</span>
-                        <span class="skill-tag">Microsoft Office Suite</span>
-                        <span class="skill-tag">Canva</span>
-                        <span class="skill-tag">CRM Systems</span>
-                    </div>
-                </div>
-
-                <div class="skill-category">
-                    <h3>Professional Skills</h3>
-                    <div class="skills-list">
-                        <span class="skill-tag">Project Management</span>
-                        <span class="skill-tag">Team Collaboration</span>
-                        <span class="skill-tag">Problem Solving</span>
-                        <span class="skill-tag">Attention to Detail</span>
-                        <span class="skill-tag">Adaptability</span>
-                    </div>
-                </div>
+            <div class="about-meta-item">
+              <div class="about-meta-label">University</div>
+              <div class="about-meta-value">Tennessee Technological University</div>
             </div>
-
-            <div class="section-header" style="margin-top: 4rem;">
-                <h3 style="font-family: 'Crimson Pro', serif; font-size: 1.8rem; color: var(--primary);">Certifications</h3>
+            <div class="about-meta-item">
+              <div class="about-meta-label">Expected Graduation</div>
+              <div class="about-meta-value">August 2026</div>
             </div>
-            <div class="skills-list" style="justify-content: center; max-width: 800px; margin: 0 auto;">
-                <span class="skill-tag">Customer Service Relationship Management</span>
-                <span class="skill-tag">Project Management</span>
+            <div class="about-meta-item">
+              <div class="about-meta-label">Location</div>
+              <div class="about-meta-value">Cookeville, Tennessee</div>
             </div>
+          </div>
         </div>
-    </section>
+      </div>
+    </div>
+  </section>
 
-    <!-- Contact Section -->
-    <section id="contact">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Let's Connect</h2>
-                <p class="section-subtitle">I'm always open to discussing technical communication opportunities, collaborations, or speaking engagements</p>
+  <!-- ═══ EXPERIENCE ═══ -->
+  <section id="experience">
+    <div class="container">
+      <div class="section-head reveal">
+        <div class="section-label">Career</div>
+        <h2 class="section-title">Experience</h2>
+        <p class="section-sub">My professional journey in technical communication, education, and content development</p>
+      </div>
+      <div class="timeline">
+
+        <div class="timeline-item reveal">
+          <div class="exp-header">
+            <div>
+              <div class="exp-role">Program Development & Community Engagement Associate</div>
+              <div class="exp-company">Office of Intercultural Affairs, Tennessee Technological University</div>
             </div>
-            <div class="contact-grid">
-                <div class="contact-card">
-                    <div class="contact-icon">📧</div>
-                    <h3>Email</h3>
-                    <a href="mailto:azeeezadesayo@gmail.com">azeeezadesayo@gmail.com</a>
-                </div>
-                <div class="contact-card">
-                    <div class="contact-icon">📱</div>
-                    <h3>Phone</h3>
-                    <a href="tel:+19312843581">+1 (931) 284-3581</a>
-                </div>
-                <div class="contact-card">
-                    <div class="contact-icon">📍</div>
-                    <h3>Location</h3>
-                    <p>Cookeville, Tennessee</p>
-                </div>
-            </div>
+            <div class="exp-date">Fall 2025</div>
+          </div>
+          <ul class="exp-list">
+            <li>Designed and implemented leadership development programming focused on communication, mentorship, and community engagement</li>
+            <li>Created weekly educational content for mentors and mentees to develop communication skills and support leadership growth</li>
+            <li>Assessed participant engagement and feedback to continuously adapt program activities</li>
+          </ul>
         </div>
-    </section>
 
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2026 Nimotallahi Azeez. All rights reserved.</p>
-    </footer>
+        <div class="timeline-item reveal">
+          <div class="exp-header">
+            <div>
+              <div class="exp-role">Graduate Teaching Assistant</div>
+              <div class="exp-company">Tennessee Technological University</div>
+            </div>
+            <div class="exp-date">August 2024 – Present</div>
+          </div>
+          <ul class="exp-list">
+            <li>Design and deliver course content including lectures, discussions, and writing assignments</li>
+            <li>Facilitate class engagement through interactive activities, collaborative exercises, and reflective discussions</li>
+            <li>Provide constructive feedback on student drafts, focusing on clarity, coherence, and grammar</li>
+            <li>Offer one-on-one support to students, helping them develop ideas and refine arguments</li>
+          </ul>
+        </div>
+
+        <div class="timeline-item reveal">
+          <div class="exp-header">
+            <div>
+              <div class="exp-role">Customer Support Representative</div>
+              <div class="exp-company">Field Nation</div>
+            </div>
+            <div class="exp-date">August 2023 – August 2024</div>
+          </div>
+          <ul class="exp-list">
+            <li>Handled incoming customer calls and service requests, resolving issues or forwarding to appropriate teams</li>
+            <li>Maintained accurate records of all customer interactions using CRM tools</li>
+            <li>Assisted in collecting and organizing customer feedback to improve support materials</li>
+          </ul>
+        </div>
+
+        <div class="timeline-item reveal">
+          <div class="exp-header">
+            <div>
+              <div class="exp-role">Information Developer</div>
+              <div class="exp-company">Ministry of Information and Strategy, Nigeria</div>
+            </div>
+            <div class="exp-date">July 2022 – July 2023</div>
+          </div>
+          <ul class="exp-list">
+            <li>Created and revised official communications including press releases, briefing notes, and public service announcements</li>
+            <li>Proofread and edited all communications to meet government style guides, achieving 95% error-free published materials</li>
+            <li>Contributed to public information campaigns, including developing visual aids and awareness initiatives</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ RESEARCH / PUBLICATIONS ═══ -->
+  <section id="research">
+    <div class="container">
+      <div class="section-head reveal">
+        <div class="section-label">Scholarship</div>
+        <h2 class="section-title">Research & Publications</h2>
+        <p class="section-sub" style="color:rgba(253,250,245,0.6);">Peer-reviewed work and forthcoming contributions to the field of technical communication</p>
+      </div>
+      <div class="research-grid">
+
+        <div class="research-card reveal">
+          <span class="research-type-tag tag-chapter">Book Chapter · Forthcoming</span>
+          <h3>Beyond refusal: "Co-intelligence" and "Coded Gaze" as AI pedagogies</h3>
+          <p class="research-authors">Ramler, M., Askins, S., Azeez, N., Barnes, K., Begum, A., Grubbs, N.G.</p>
+          <p class="research-venue">In: <em>AI in Technical Communication: Emerging Technologies and Pedagogies.</em> Routledge.</p>
+          <div class="research-actions">
+            <!-- When you have the PDF, replace the href with your PDF file path e.g. href="papers/co-intelligence.pdf" -->
+            <a href="#" class="btn-sm btn-ghost-sm" title="PDF coming soon">📄 PDF (Coming Soon)</a>
+          </div>
+        </div>
+
+        <div class="research-card reveal">
+          <span class="research-type-tag tag-journal">Journal Article · 2025</span>
+          <h3>Artificial intelligence governance: Legal and public policy implications for data privacy and algorithmic accountability</h3>
+          <p class="research-authors">Ighofiomoni, M.O., Awoyomi, O.O., Popoola, R., Ahaiwe, E.C., Chinonyerem, C.A., Azeez, N.A.</p>
+          <p class="research-venue"><em>International Journal of Humanities, Literature and Art Research,</em> 10(6). (2025)</p>
+          <div class="research-actions">
+            <a href="https://doi.org/10.70382/mejhlar.v10i6.078" target="_blank" class="btn-sm btn-gold-sm">🔗 View Publication</a>
+            <!-- Add PDF: <a href="papers/ai-governance.pdf" class="btn-sm btn-ghost-sm">📄 Download PDF</a> -->
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Instructions for adding PDFs -->
+      <div class="research-upload-note reveal">
+        <strong>💡 To add downloadable PDFs:</strong> Upload your .pdf files to your GitHub repo in a <code>papers/</code> folder, 
+        then update the <code>href</code> on each "Download PDF" button to match the file path (e.g. <code>papers/my-paper.pdf</code>).
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ PRESENTATIONS ═══ -->
+  <section id="presentations">
+    <div class="container">
+      <div class="section-head reveal">
+        <div class="section-label">Speaking</div>
+        <h2 class="section-title">Conference Presentations</h2>
+        <p class="section-sub">Sharing insights on accessible technology and AI in communication</p>
+      </div>
+      <div class="pres-grid">
+
+        <div class="pres-card reveal">
+          <div class="pres-icon">🎙️</div>
+          <h3>"The Need to Design Accessible Technology Tools for Childhood Education"</h3>
+          <div class="pres-meta">
+            <div class="pres-meta-row"><span class="label">Conference</span> Appalachian Conference</div>
+            <div class="pres-meta-row"><span class="label">Location</span> Cookeville, TN</div>
+            <div class="pres-meta-row"><span class="label">Date</span> March 21, 2025</div>
+          </div>
+        </div>
+
+        <div class="pres-card reveal">
+          <div class="pres-icon">🤖</div>
+          <h3>"ChatGPT 5 and Me: Writing in the Age of Automation"</h3>
+          <div class="pres-meta">
+            <div class="pres-meta-row"><span class="label">Conference</span> National High School Journalism Convention</div>
+            <div class="pres-meta-row"><span class="label">Location</span> Nashville, TN</div>
+            <div class="pres-meta-row"><span class="label">Date</span> November 14, 2025</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ GALLERY ═══ -->
+  <section id="gallery">
+    <div class="container">
+      <div class="section-head gallery-intro reveal">
+        <div class="section-label">Events & Moments</div>
+        <h2 class="section-title">Gallery</h2>
+        <p class="section-sub">Conferences, academic events, and milestones from my journey</p>
+      </div>
+      <div class="gallery-grid">
+        <!-- REPLACE each gallery-placeholder div with an <img> tag pointing to your photo -->
+        <!-- Example: <img src="gallery/conference1.jpg" alt="Appalachian Conference 2025" /> -->
+        <div class="gallery-item reveal">
+          <div class="gallery-placeholder">
+            <span class="gallery-placeholder-icon">📸</span>
+            <span>Add photo</span>
+          </div>
+          <div class="gallery-overlay">
+            <div class="gallery-caption">Appalachian Conference — March 2025</div>
+          </div>
+        </div>
+        <div class="gallery-item reveal">
+          <div class="gallery-placeholder">
+            <span class="gallery-placeholder-icon">📸</span>
+            <span>Add photo</span>
+          </div>
+          <div class="gallery-overlay">
+            <div class="gallery-caption">National High School Journalism Convention — Nashville, Nov 2025</div>
+          </div>
+        </div>
+        <div class="gallery-item reveal">
+          <div class="gallery-placeholder">
+            <span class="gallery-placeholder-icon">📸</span>
+            <span>Add photo</span>
+          </div>
+          <div class="gallery-overlay">
+            <div class="gallery-caption">Tennessee Tech Campus</div>
+          </div>
+        </div>
+        <div class="gallery-item reveal">
+          <div class="gallery-placeholder">
+            <span class="gallery-placeholder-icon">📸</span>
+            <span>Add photo</span>
+          </div>
+          <div class="gallery-overlay">
+            <div class="gallery-caption">Add caption</div>
+          </div>
+        </div>
+        <div class="gallery-item reveal">
+          <div class="gallery-placeholder">
+            <span class="gallery-placeholder-icon">📸</span>
+            <span>Add photo</span>
+          </div>
+          <div class="gallery-overlay">
+            <div class="gallery-caption">Add caption</div>
+          </div>
+        </div>
+        <div class="gallery-item reveal">
+          <div class="gallery-placeholder">
+            <span class="gallery-placeholder-icon">📸</span>
+            <span>Add photo</span>
+          </div>
+          <div class="gallery-overlay">
+            <div class="gallery-caption">Add caption</div>
+          </div>
+        </div>
+      </div>
+      <div class="gallery-upload-note reveal">
+        💡 <strong>To add photos:</strong> Create a <code>gallery/</code> folder in your GitHub repo, upload your images, 
+        then replace the placeholder divs with <code>&lt;img src="gallery/your-photo.jpg" alt="caption" /&gt;</code>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ SKILLS ═══ -->
+  <section id="skills">
+    <div class="container">
+      <div class="section-head reveal">
+        <div class="section-label">Expertise</div>
+        <h2 class="section-title">Skills & Expertise</h2>
+        <p class="section-sub">Technical and professional competencies across communication, tools, and leadership</p>
+      </div>
+      <div class="skills-layout">
+        <div class="skill-block reveal">
+          <div class="skill-block-title"><span class="icon">✍️</span> Communication</div>
+          <div class="skill-block-sub">Core professional competencies</div>
+          <div class="skill-tags">
+            <span class="skill-tag">Technical Writing</span>
+            <span class="skill-tag">Content Development</span>
+            <span class="skill-tag">Public Speaking</span>
+            <span class="skill-tag">Educational Content</span>
+            <span class="skill-tag">Grant Writing</span>
+            <span class="skill-tag">Editing & Proofreading</span>
+          </div>
+        </div>
+        <div class="skill-block reveal">
+          <div class="skill-block-title"><span class="icon">🛠️</span> Tools & Software</div>
+          <div class="skill-block-sub">Platforms & applications</div>
+          <div class="skill-tags">
+            <span class="skill-tag">MadCap Flare</span>
+            <span class="skill-tag">SharePoint</span>
+            <span class="skill-tag">Confluence</span>
+            <span class="skill-tag">Microsoft Office Suite</span>
+            <span class="skill-tag">Canva</span>
+            <span class="skill-tag">CRM Systems</span>
+          </div>
+        </div>
+        <div class="skill-block reveal">
+          <div class="skill-block-title"><span class="icon">🤝</span> Professional</div>
+          <div class="skill-block-sub">Leadership & soft skills</div>
+          <div class="skill-tags">
+            <span class="skill-tag">Project Management</span>
+            <span class="skill-tag">Team Collaboration</span>
+            <span class="skill-tag">Problem Solving</span>
+            <span class="skill-tag">Attention to Detail</span>
+            <span class="skill-tag">Adaptability</span>
+            <span class="skill-tag">Mentorship</span>
+          </div>
+        </div>
+      </div>
+      <div class="certs-row reveal" style="margin-top:2.5rem;">
+        <div class="cert-badge"><span class="cert-icon">🏅</span> Customer Service Relationship Management</div>
+        <div class="cert-badge"><span class="cert-icon">🏅</span> Project Management</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ CONTACT ═══ -->
+  <section id="contact">
+    <div class="container">
+      <div class="section-head reveal">
+        <div class="section-label">Reach Out</div>
+        <h2 class="section-title">Let's Connect</h2>
+        <p class="section-sub" style="color:rgba(253,250,245,0.6);">Open to discussing research collaborations, speaking engagements, or professional opportunities</p>
+      </div>
+      <div class="contact-layout">
+        <div class="contact-info-block reveal">
+          <div class="contact-detail">
+            <div class="contact-icon-wrap">📧</div>
+            <div>
+              <div class="contact-detail-label">Email</div>
+              <div class="contact-detail-value">
+                <!-- Replace with your actual email below -->
+                <a href="mailto:nazeez42@tntech.edu">nazeez42@tntech.edu</a>
+              </div>
+            </div>
+          </div>
+          <div class="contact-detail">
+            <div class="contact-icon-wrap">📱</div>
+            <div>
+              <div class="contact-detail-label">Phone</div>
+              <div class="contact-detail-value">
+                <a href="tel:+19312843581">+1 (931) 284-3581</a>
+              </div>
+            </div>
+          </div>
+          <div class="contact-detail">
+            <div class="contact-icon-wrap">📍</div>
+            <div>
+              <div class="contact-detail-label">Location</div>
+              <div class="contact-detail-value">Cookeville, Tennessee</div>
+            </div>
+          </div>
+          <div class="social-links">
+            <!-- Add your actual LinkedIn/ORCID/ResearchGate URLs -->
+            <a href="#" class="social-link" title="LinkedIn" aria-label="LinkedIn">💼</a>
+            <a href="#" class="social-link" title="ORCID" aria-label="ORCID">🔬</a>
+            <a href="#" class="social-link" title="ResearchGate" aria-label="ResearchGate">📚</a>
+            <a href="#" class="social-link" title="GitHub" aria-label="GitHub">💻</a>
+          </div>
+        </div>
+        <div class="contact-form reveal">
+          <!-- This form sends an email via your mail client. For a backend form, replace action with your endpoint. -->
+          <form id="contactForm">
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label" for="fname">First Name</label>
+                <input class="form-input" type="text" id="fname" name="fname" placeholder="Jane" required />
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="lname">Last Name</label>
+                <input class="form-input" type="text" id="lname" name="lname" placeholder="Doe" required />
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="email">Email Address</label>
+              <input class="form-input" type="email" id="email" name="email" placeholder="jane@example.com" required />
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="subject">Subject</label>
+              <input class="form-input" type="text" id="subject" name="subject" placeholder="Collaboration / Speaking / Other" />
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="message">Message</label>
+              <textarea class="form-textarea" id="message" name="message" placeholder="Tell me what's on your mind…" required></textarea>
+            </div>
+            <button type="submit" class="form-submit">Send Message →</button>
+          </form>
+          <p id="formMsg" style="margin-top:1rem; font-size:0.88rem; color:var(--gold); display:none;"></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ FOOTER ═══ -->
+  <footer>
+    <p>&copy; 2025 <strong>Nimotallahi Azeez</strong> &mdash; M.A. Technical Communication Portfolio &middot; Tennessee Technological University</p>
+  </footer>
+
+  <!-- ═══ SCRIPTS ═══ -->
+  <script>
+    /* --- Navbar scroll shadow --- */
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      navbar.classList.toggle('scrolled', window.scrollY > 20);
+    });
+
+    /* --- Mobile nav toggle --- */
+    const navToggle = document.getElementById('navToggle');
+    const navLinks  = document.getElementById('navLinks');
+    navToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('open');
+    });
+    navLinks.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => navLinks.classList.remove('open'));
+    });
+
+    /* --- Scroll reveal --- */
+    const revealEls = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry, i) => {
+        if (entry.isIntersecting) {
+          entry.target.style.transitionDelay = (i % 4) * 0.08 + 's';
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    revealEls.forEach(el => observer.observe(el));
+
+    /* --- Contact form (mailto fallback) --- */
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const fname   = document.getElementById('fname').value;
+      const lname   = document.getElementById('lname').value;
+      const email   = document.getElementById('email').value;
+      const subject = document.getElementById('subject').value || 'Portfolio Contact';
+      const message = document.getElementById('message').value;
+      const body    = `Name: ${fname} ${lname}\nEmail: ${email}\n\n${message}`;
+      window.location.href = `mailto:nazeez42@tntech.edu?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+      const msg = document.getElementById('formMsg');
+      msg.textContent = '✓ Opening your email client… Thank you for reaching out!';
+      msg.style.display = 'block';
+      this.reset();
+    });
+  </script>
 </body>
 </html>
