@@ -1728,13 +1728,12 @@ footer {
     align-items: center;
   }
 }
-
-/* Unique Masters Case Study Styling */
+/* --- Masters Portfolio Layout --- */
 .case-study-wrapper {
   margin-top: 60px;
   display: flex;
   flex-direction: column;
-  gap: 100px;
+  gap: 120px; /* Increased gap for better breathing room */
 }
 
 .case-study {
@@ -1744,71 +1743,118 @@ footer {
   align-items: center;
 }
 
-/* Flip every second row */
-.case-study.alt-row {
-  direction: rtl;
+/* Fix: The Flip Logic (Stable) */
+/* This tells the media/image column to move to the second position on alt-rows */
+.case-study.alt-row .project-media {
+  order: 2;
 }
 .case-study.alt-row .project-content {
-  direction: ltr; /* Reset text direction for content */
+  order: 1;
 }
 
+/* Image & Media Styling */
+.media-container,
 .media-placeholder {
-  background: #f4f1ea; /* Creamier than background */
+  background: var(--warm);
   aspect-ratio: 4/3;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  border: 1px solid #e0ddd5;
+  border: 1px solid var(--border);
   border-radius: 4px;
-  margin-bottom: 20px;
+  overflow: hidden;
+  box-shadow: var(--shadow-m);
+  transition: var(--transition);
 }
 
 .media-placeholder i {
   font-size: 3rem;
-  color: #d4af37;
+  color: var(--gold);
   margin-bottom: 10px;
 }
 
+.project-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Project Content & Typography */
 .project-category {
   font-size: 0.75rem;
   text-transform: uppercase;
   letter-spacing: 2px;
-  color: #888;
+  color: var(--muted);
   display: block;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
 }
 
 .reflection-drawer {
-  margin-top: 30px;
-  padding: 25px;
-  background: #fff;
-  border-left: 2px solid #d4af37;
-  box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.02);
+  padding: 35px;
+  background: var(--white);
+  border-left: 3px solid var(--gold);
+  box-shadow: var(--shadow-s);
 }
 
 .reflection-drawer h5 {
-  font-family: var(--font-serif);
-  font-style: italic;
-  margin-bottom: 10px;
-  color: #333;
+  font-family: var(--ff-display);
+  font-size: 1.4rem;
+  margin-bottom: 15px;
+  color: var(--ink);
+}
+
+.reflection-drawer p {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--ink-light);
+}
+
+/* Buttons */
+.project-links {
+  margin-top: 20px;
+  display: flex;
+  gap: 12px;
 }
 
 .case-btn {
-  padding: 10px 20px;
-  background: #1a1a1a;
-  color: #fff;
+  padding: 12px 24px;
+  background: var(--ink);
+  color: var(--white);
   text-decoration: none;
   font-size: 0.85rem;
-  display: inline-block;
-  margin-right: 10px;
-  transition: 0.3s;
+  font-weight: 500;
+  transition: var(--transition);
+}
+
+.case-btn:hover {
+  background: var(--gold);
+  transform: translateY(-2px);
 }
 
 .case-btn.outline {
   background: transparent;
-  color: #1a1a1a;
-  border: 1px solid #1a1a1a;
+  color: var(--ink);
+  border: 1px solid var(--ink);
+}
+
+/* Mobile Responsiveness (Stable) */
+@media (max-width: 992px) {
+  .case-study {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  /* Reset order on mobile so images are always on top */
+  .case-study.alt-row .project-media,
+  .case-study .project-media {
+    order: 1;
+  }
+  .case-study.alt-row .project-content,
+  .case-study .project-content {
+    order: 2;
+  }
 }
 
 /* Talks Roadmap Styling */
